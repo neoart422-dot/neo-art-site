@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "title": "세계명화 제작 및 유통",
+      "summary": "레플리카 명화를 제작하고, 기업 구내식당·연구소 로비·접견실·카페 등 공간에 맞는 명화를 골라 설치합니다.",
+      "images": ["/assets/img/install-1.jpg", "/assets/img/install-3.jpg", "/assets/img/install-6.jpg"]
+    },
+    {
+      "title": "아트굿즈 · K굿즈",
+      "summary": "명화 우산, 파우치, 에코백, 탁상 미니액자 같은 아트굿즈와 한국 전통 디자인을 담은 K굿즈를 직접 기획하고 만듭니다.",
+      "images": ["/assets/img/goods-5.jpg", "/assets/img/goods-3.jpg", "/assets/img/kgoods-1.jpg"]
+    },
+    {
+      "title": "직영 매장 운영",
+      "summary": "갤러리네오, 갤러리오라, 아트샵 오라(킨텍스·김해공항·해운대) 등 직영 매장 5곳을 운영합니다.",
+      "images": ["/assets/img/store-kintex1-1.jpg", "/assets/img/store-haeundae-1.jpg", "/assets/img/store-siheung-1.jpg"]
+    },
+    {
+      "title": "그림액자 · 아트상품 공급",
+      "summary": "아르떼뮤지엄 부산·제주·강릉·여수점에 상품을 공급하고, 문화예술회관 전시의 아트샵 상품을 공급합니다.",
+      "images": ["/assets/img/arte-1.jpg", "/assets/img/arte-3.jpg", "/assets/img/supply-seongnam.jpg"]
+    },
+    {
+      "title": "전시용 명화 복제화 공급",
+      "summary": "전시기획사에 전시용 명화 복제화를 납품합니다. 프리다 칼로전 48점, 르누아르전 42점, 툴루즈 로트렉전 45점을 공급했습니다.",
+      "images": ["/assets/img/supply-frida.jpg", "/assets/img/supply-lautrec.jpg", "/assets/img/supply-renoir.jpg"]
+    },
+    {
+      "title": "세계명화 전시기획",
+      "summary": "클림트전, 모네 & 르누아르전, 색깔여행전, 이중섭전 등 지역 문화예술회관과 함께 세계명화 전시를 기획합니다.",
+      "images": ["/assets/img/exh-geumcheon-klimt.jpg", "/assets/img/exh-chungju-monet-renoir.jpg", "/assets/img/exh-cheongnamdae-monet-renoir.jpg"]
+    },
+    {
+      "title": "원목액자 수입 유통",
+      "summary": "250여 종의 고급 원목액자를 수입해 유통하며, 작품에 맞춘 주문제작도 가능합니다.",
+      "images": ["/assets/img/frames-1.jpg", "/assets/img/frames-2.jpg", "/assets/img/frames-3.jpg"]
+    }
+  ]
+}

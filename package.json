@@ -1,0 +1,5 @@
+{
+  "name": "neo-art-site",
+  "private": true,
+  "scripts": { "build": "node build.js", "preview": "PREVIEW=1 OUT=_preview node build.js" }
+}

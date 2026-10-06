@@ -1,0 +1,59 @@
+{
+  "items": [
+    {
+      "name": "갤러리네오 · 카페네오",
+      "type": "전시장 · 카페 · 아트샵",
+      "region": "경기 고양",
+      "location": "킨텍스 제2전시장 1층",
+      "address": "경기 고양시 일산서구 킨텍스로, 킨텍스 제2전시장 1층",
+      "hours": "",
+      "description": "세계명화 레플리카와 국내 화가 원작을 함께 전시하는 갤러리입니다. 카페와 아트샵을 함께 운영하며, 전시 작품은 현장에서 구입하실 수 있습니다.",
+      "images": ["/assets/img/store-neo-2.jpg", "/assets/img/store-neo-1.jpg", "/assets/img/store-neo-3.jpg"],
+      "map": "https://map.naver.com/p/search/킨텍스%20제2전시장"
+    },
+    {
+      "name": "갤러리오라",
+      "type": "세계명화 상설 전시장 · 아트샵",
+      "region": "경기 시흥",
+      "location": "시흥하늘휴게소 3층",
+      "address": "경기 시흥시 조남동 산15, 시흥하늘휴게소 3층",
+      "hours": "",
+      "description": "고속도로 휴게소 안의 세계명화 상설 전시장입니다. 여행길에 들러 명화 레플리카와 아트굿즈를 둘러보실 수 있습니다.",
+      "images": ["/assets/img/store-siheung-1.jpg", "/assets/img/store-siheung-2.jpg", "/assets/img/store-siheung-3.jpg"],
+      "map": "https://map.naver.com/p/search/시흥하늘휴게소"
+    },
+    {
+      "name": "아트샵 오라 킨텍스점",
+      "type": "아트샵",
+      "region": "경기 고양",
+      "location": "킨텍스 제1전시장 1층 로비",
+      "address": "경기 고양시 일산서구 킨텍스로 217-60, 킨텍스 제1전시장 1층 (5A 출입구 인근)",
+      "hours": "",
+      "description": "명화 액자, 명화 우산, 에코백, 문구 등 아트굿즈를 판매합니다. 전시회 관람객이 많이 찾는 매장입니다.",
+      "images": ["/assets/img/store-kintex1-1.jpg", "/assets/img/store-kintex1-2.jpg", "/assets/img/store-kintex1-3.jpg"],
+      "map": "https://map.naver.com/p/search/킨텍스%20제1전시장"
+    },
+    {
+      "name": "아트샵 오라 김해공항점",
+      "type": "아트샵 · K굿즈",
+      "region": "부산",
+      "location": "김해국제공항 국내선 1층",
+      "address": "부산 강서구 공항진입로 108, 김해국제공항 국내선청사 1층",
+      "hours": "",
+      "description": "명화 아트굿즈와 한국 전통 디자인을 담은 K굿즈를 판매합니다. 여행 선물을 고르기 좋은 매장입니다.",
+      "images": ["/assets/img/store-gimhae-1.jpg", "/assets/img/store-gimhae-2.jpg", "/assets/img/store-gimhae-3.jpg"],
+      "map": "https://map.naver.com/p/search/김해국제공항%20국내선"
+    },
+    {
+      "name": "아트샵 오라 해운대점",
+      "type": "아트샵",
+      "region": "부산",
+      "location": "부산 엑스더스카이 전망대 98층",
+      "address": "부산 해운대구 달맞이길 30, 엘시티 랜드마크타워 98층 (BUSAN X the SKY)",
+      "hours": "전망대 운영시간과 같습니다",
+      "description": "해운대 바다가 내려다보이는 전망대 98층의 아트샵입니다. 명화 우산, 모자, 에코백 등 기념품을 판매합니다.",
+      "images": ["/assets/img/store-haeundae-1.jpg", "/assets/img/store-haeundae-2.jpg"],
+      "map": "https://map.naver.com/p/search/부산엑스더스카이"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+# 관리자 화면(Pages CMS, https://app.pagescms.org) 설정 파일
+# 여기 적힌 항목이 관리자 화면의 메뉴와 입력 칸이 됩니다.
+media:
+  input: src/assets/uploads
+  output: /assets/uploads
+  extensions: [jpg, jpeg, png, webp, gif]
+
+content:
+  - name: news
+    label: 소식 (공지·새 소식)
+    type: file
+    path: src/content/news.json
+    format: json
+    fields:
+      - name: items
+        label: 소식 목록
+        type: object
+        list: true
+        fields:
+          - { name: date, label: 날짜, type: date, options: { format: "yyyy-MM-dd" } }
+          - { name: title, label: 제목, type: string, required: true }
+          - { name: image, label: 사진, type: image }
+          - { name: body, label: 본문, type: text }
+
+  - name: stores
+    label: 매장 안내
+    type: file
+    path: src/content/stores.json
+    format: json
+    fields:
+      - name: items
+        label: 매장 목록
+        type: object
+        list: true
+        fields:
+          - { name: name, label: 매장 이름, type: string, required: true }
+          - { name: type, label: 매장 종류, type: string, description: "예: 전시장 · 카페 · 아트샵" }
+          - { name: region, label: 지역, type: string, description: "예: 경기 고양" }
+          - { name: location, label: 짧은 위치, type: string, description: "예: 킨텍스 제2전시장 1층" }
+          - { name: address, label: 주소, type: string }
+          - { name: hours, label: 운영시간, type: string, description: "비워두면 표시하지 않습니다" }
+          - { name: description, label: 소개 글, type: text }
+          - { name: images, label: 사진 (첫 사진이 대표 사진), type: image, list: true }
+          - { name: map, label: 지도 링크, type: string }
+
+  - name: exhibitions
+    label: 전시기획
+    type: file
+    path: src/content/exhibitions.json
+    format: json
+    fields:
+      - { name: intro, label: 소개 글, type: text }
+      - { name: includes, label: 함께 준비하는 것, type: string, list: true }
+      - name: packages
+        label: 전시 패키지
+        type: object
+        list: true
+        fields:
+          - { name: title, label: 전시명, type: string, required: true }
+          - { name: works, label: 작품 수, type: string }
+          - { name: sections, label: 구성, type: text }
+          - { name: image, label: 대표 사진, type: image }
+      - name: history
+        label: 진행 이력
+        type: object
+        list: true
+        fields:
+          - { name: year, label: 연도, type: string }
+          - { name: title, label: 전시명, type: string }
+          - { name: venue, label: 장소·기관, type: string }
+          - { name: image, label: 사진 (있으면 아래 사진 모음에 표시), type: image }
+      - { name: supply_title, label: 작품 공급 제목, type: string }
+      - name: supply
+        label: 작품 공급 사례
+        type: object
+        list: true
+        fields:
+          - { name: title, label: 전시명, type: string }
+          - { name: detail, label: 내용, type: string }
+          - { name: image, label: 사진, type: image }
+
+  - name: business
+    label: 사업분야
+    type: file
+    path: src/content/business.json
+    format: json
+    fields:
+      - name: items
+        label: 사업분야 목록
+        type: object
+        list: true
+        fields:
+          - { name: title, label: 제목, type: string, required: true }
+          - { name: summary, label: 설명, type: text }
+          - { name: images, label: 사진 (3장 권장), type: image, list: true }
+
+  - name: site
+    label: 회사 기본정보 · 인사말
+    type: file
+    path: src/content/site.json
+    format: json
+    fields:
+      - { name: company, label: 회사명, type: string }
+      - { name: company_en, label: 영문 회사명, type: string }
+      - { name: ceo, label: 대표자, type: string }
+      - { name: headline, label: 첫 화면 큰 제목, type: string }
+      - { name: headline_en, label: 첫 화면 영문 문구, type: string }
+      - { name: lead, label: 첫 화면 소개 글, type: text }
+      - { name: hero_image, label: 첫 화면 액자 사진, type: image }
+      - { name: hero_caption_title, label: 액자 사진 작품명, type: string }
+      - { name: hero_caption_artist, label: 액자 사진 작가·연도, type: string }
+      - { name: hero_caption_note, label: 액자 사진 설명, type: string }
+      - { name: greeting_title, label: 인사말 제목, type: string }
+      - { name: greeting, label: 인사말 본문, type: text }
+      - { name: phone, label: 대표전화, type: string }
+      - { name: mobile, label: 휴대전화, type: string }
+      - { name: email, label: 이메일, type: string }
+      - { name: hq_address, label: 본사 주소, type: string }
+      - { name: biz_address, label: 사업장 주소, type: string }
+      - { name: biz_no, label: 사업자등록번호, type: string }
+      - { name: smartstore, label: 스마트스토어 주소, type: string }
+      - { name: blog, label: 블로그 주소, type: string }
+      - { name: instagram, label: 인스타그램 주소, type: string }
+      - { name: vr_tour, label: VR 전시 주소, type: string }
+      - { name: form_email, label: 문의 받을 이메일, type: string }
