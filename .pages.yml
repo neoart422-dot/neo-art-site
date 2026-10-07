@@ -103,6 +103,7 @@ content:
       - { name: company, label: 회사명, type: string }
       - { name: company_en, label: 영문 회사명, type: string }
       - { name: ceo, label: 대표자, type: string }
+      - { name: hero_eyebrow, label: 첫 화면 맨 위 한 줄 (회사 분야), type: string }
       - { name: headline, label: 첫 화면 큰 제목, type: string }
       - { name: headline_en, label: 첫 화면 영문 문구, type: string }
       - { name: lead, label: 첫 화면 소개 글, type: text }
@@ -110,6 +111,19 @@ content:
       - { name: hero_caption_title, label: 액자 사진 작품명, type: string }
       - { name: hero_caption_artist, label: 액자 사진 작가·연도, type: string }
       - { name: hero_caption_note, label: 액자 사진 설명, type: string }
+      - name: audiences
+        label: 고객별 안내 카드 (첫 화면)
+        type: object
+        list: true
+        fields:
+          - { name: who, label: 대상 고객, type: string }
+          - { name: title, label: 제목, type: string }
+          - { name: text, label: 설명, type: text }
+          - { name: image, label: 사진, type: image }
+          - { name: cta, label: 첫째 버튼 글자, type: string }
+          - { name: link, label: 첫째 버튼 링크, type: string }
+          - { name: cta2, label: 둘째 버튼 글자, type: string }
+          - { name: link2, label: 둘째 버튼 링크, type: string }
       - { name: greeting_title, label: 인사말 제목, type: string }
       - { name: greeting, label: 인사말 본문, type: text }
       - { name: phone, label: 대표전화, type: string }

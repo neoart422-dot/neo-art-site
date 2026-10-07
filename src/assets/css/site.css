@@ -263,3 +263,19 @@ p { margin: 0; }
 .footer__info dd { margin: 0; }
 .footer__legal { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid color-mix(in srgb, var(--onband) 18%, transparent); font-size: 0.8rem; opacity: 0.7; }
 @media (max-width: 760px) { .footer__grid { grid-template-columns: minmax(0, 1fr); } .footer__info div { grid-template-columns: minmax(0, 1fr); gap: 0; } }
+
+/* 고객별 안내 (홈) */
+.audiences { padding-block-start: clamp(1rem, 3vw, 2rem); }
+.audgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 1.75rem); }
+.aud { display: grid; grid-template-rows: auto 1fr; background: var(--paper); border: 1px solid var(--line); }
+.aud img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.aud__body { display: flex; flex-direction: column; gap: 0.65rem; padding: clamp(1.1rem, 2.5vw, 1.5rem); }
+.aud__who { font-size: var(--step--1); color: var(--gilt); font-weight: 600; letter-spacing: 0.04em; }
+.aud h3 { font-size: 1.3rem; }
+.aud__body > p:not(.aud__who) { color: var(--muted); font-size: 0.95rem; }
+.aud__cta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; padding-top: 0.4rem; }
+.aud__cta .btn { font-size: 0.875rem; padding: 0.6em 1em; }
+@media (max-width: 900px) { .audgrid { grid-template-columns: minmax(0, 1fr); } .aud { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); grid-template-rows: auto; } .aud img { height: 100%; aspect-ratio: auto; } }
+@media (max-width: 560px) { .aud { grid-template-columns: minmax(0, 1fr); } .aud img { aspect-ratio: 16 / 9; height: auto; } }
+
+.sechead h2 .nb { display: inline-block; }

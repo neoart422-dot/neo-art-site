@@ -28,9 +28,11 @@ function makeRel(depth) {
   return function rel(p) {
     if (!p) return '';
     if (ext(p) || p.startsWith('mailto:') || p.startsWith('tel:') || p.startsWith('#')) return p;
+    let hash = '';
+    const hi = p.indexOf('#'); if (hi > 0) { hash = p.slice(hi); p = p.slice(0, hi); }
     let clean = p.replace(/^\/+/, '');
     if (clean === '' || clean.endsWith('/')) clean += PREVIEW ? 'index.html' : '';
-    return (up + clean) || './';
+    return ((up + clean) || './') + hash;
   };
 }
 
@@ -110,7 +112,7 @@ ${head}
 
 const figure = (rel, src, cap, cls = '') => src ? `<figure class="plate ${cls}"><img src="${rel(src)}" alt="${esc(cap || '')}" loading="lazy">${cap ? `<figcaption>${esc(cap)}</figcaption>` : ''}</figure>` : '';
 
-const sectionHead = (eyebrow, title, lead) => `<header class="sechead"><p class="eyebrow">${esc(eyebrow)}</p><h2>${esc(title)}</h2>${lead ? `<p class="sechead__lead">${esc(lead)}</p>` : ''}</header>`;
+const sectionHead = (eyebrow, title, lead) => `<header class="sechead"><p class="eyebrow">${esc(eyebrow)}</p><h2>${esc(title).split(/,\s*/).map((t, i, a) => `<span class="nb">${t}${i < a.length - 1 ? ',' : ''}</span>`).join(' ')}</h2>${lead ? `<p class="sechead__lead">${esc(lead)}</p>` : ''}</header>`;
 
 const contactBlock = (rel, compact) => `
 <section class="contact ${compact ? 'contact--compact' : ''}" id="contact">
@@ -148,6 +150,7 @@ const contactBlock = (rel, compact) => `
         <textarea id="f-msg" name="내용" rows="5" required></textarea>
       </div>
       <button type="submit" class="btn btn--solid">문의 보내기</button>
+      <script>(function(){var m={'#topic-exhibit':'전시 유치','#topic-buy':'명화 구입','#topic-supply':'아트상품 공급·입점'};var v=m[location.hash];if(v){var s=document.getElementById('f-topic');if(s)s.value=v;}})();</script>
       <p class="form__note" id="form-note" hidden>미리보기에서는 문의가 전송되지 않습니다. 실제 홈페이지에서는 이메일로 전달됩니다.</p>
     </form>
   </div>
@@ -160,13 +163,13 @@ pages.push({ url: '/', title: '홈', body: (rel) => `
 <section class="hero">
   <div class="wrap hero__grid">
     <div class="hero__text">
-      <p class="eyebrow">세계명화 레플리카 · 아트굿즈 · 명화 전시기획</p>
+      <p class="eyebrow">${esc(site.hero_eyebrow || '')}</p>
       <h1>${esc(site.headline).split(/,\s*/).map((t, i, a) => `<span class="nb">${t}${i < a.length - 1 ? ',' : ''}</span>`).join(' ')}</h1>
       <p class="hero__en">${esc(site.headline_en)}</p>
       <p class="hero__lead">${esc(site.lead)}</p>
       <div class="hero__cta">
-        <a class="btn btn--solid" href="${rel('/exhibitions/')}">전시기획 보기</a>
-        <a class="btn" href="${rel('/stores/')}">직영매장 안내</a>
+        <a class="btn btn--solid" href="#for-you">찾으시는 서비스 보기 ↓</a>
+        <a class="btn" href="${rel('/contact/')}">바로 문의하기</a>
       </div>
     </div>
     <figure class="hero__art">
@@ -176,9 +179,29 @@ pages.push({ url: '/', title: '홈', body: (rel) => `
   </div>
 </section>
 
+<section class="section audiences" id="for-you">
+  <div class="wrap">
+    ${sectionHead('이런 분들을 위해 일합니다', '네오아트가 드릴 수 있는 것', '')}
+    <div class="audgrid">
+      ${(site.audiences || []).map((a) => `<article class="aud">
+        <img src="${rel(a.image)}" alt="${esc(a.title)}" loading="lazy">
+        <div class="aud__body">
+          <p class="aud__who">${esc(a.who)}</p>
+          <h3>${esc(a.title)}</h3>
+          <p>${esc(a.text)}</p>
+          <div class="aud__cta">
+            ${a.cta ? `<a class="btn btn--solid" href="${rel(a.link)}"${ext(a.link) ? ' target="_blank" rel="noopener"' : ''}>${esc(a.cta)}${ext(a.link) ? ' ↗' : ''}</a>` : ''}
+            ${a.cta2 ? `<a class="btn" href="${rel(a.link2)}">${esc(a.cta2)}</a>` : ''}
+          </div>
+        </div>
+      </article>`).join('')}
+    </div>
+  </div>
+</section>
+
 <section class="band">
   <div class="wrap">
-    ${sectionHead('Painting Ovelab', '출력한 그림이 아니라, 다시 칠한 그림', '디지털 출력 위에 6~8회 유화 리터칭을 더해 붓자국과 물감의 높이, 세월이 만든 갈라짐까지 되살립니다.')}
+    ${sectionHead('Painting Ovelab', '단순 출력이 아닌, 수차례 리터칭한 원작 같은 그림', '원본 데이터로 출력한 캔버스 위에 6~8회 유화 리터칭을 더해 붓자국과 물감의 두께, 세월이 만든 갈라짐까지 원작처럼 되살립니다.')}
     <ol class="steps">
       <li><img src="${rel('/assets/img/process-1.jpg')}" alt="캔버스 고해상도 프린팅" loading="lazy"><h3>원본 데이터 · 캔버스 프린팅</h3><p>해외 유명 미술관의 원본 파일을 구입해 색보정한 뒤 캔버스천에 고해상도로 출력합니다.</p></li>
       <li><img src="${rel('/assets/img/process-2.jpg')}" alt="유화 리터칭 작업" loading="lazy"><h3>Painting Ovelab 리터칭</h3><p>출력한 작품 위에 6~8회 유화 리터칭을 더해 유화의 질감과 색감을 재현합니다.</p></li>
