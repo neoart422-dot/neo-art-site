@@ -14,6 +14,8 @@ const site = read('site.json');
 const stores = read('stores.json').items || [];
 const ex = read('exhibitions.json');
 const business = read('business.json').items || [];
+const frames = read('frames.json');
+const SITE_URL = 'https://www.neo-art.kr';
 const news = (read('news.json').items || []).slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
 
 // ---------- helpers ----------
@@ -40,21 +42,31 @@ const NAV = [
   ['/', '홈'],
   ['/about/', '회사소개'],
   ['/stores/', '직영매장 안내'],
+  ['/frames/', '명화 액자'],
   ['/business/', '사업분야'],
   ['/exhibitions/', '전시기획'],
   ['/news/', '소식'],
   ['/contact/', '문의'],
 ];
 
-function layout({ url, title, description, body, depth }) {
+function layout({ url, title, description, body, depth, image, jsonld }) {
   const rel = makeRel(depth);
   const nav = NAV.map(([href, label]) => `<a href="${rel(href)}"${href === url ? ' aria-current="page"' : ''}>${label}</a>`).join('');
-  const fullTitle = url === '/' ? `${site.company} | 세계명화 레플리카 · 아트굿즈 · 명화 전시기획` : `${title} | ${site.company}`;
+  const fullTitle = url === '/' ? `${site.company} | 세계명화 액자 · 레플리카 명화 · 명화 기획전 · 아트상품` : `${title} | ${site.company}`;
+  const canonical = SITE_URL + url;
+  const ogImage = SITE_URL + (image || site.hero_image);
   const head = `<title>${esc(fullTitle)}</title>
 <meta name="description" content="${esc(description || site.lead)}">
 <meta property="og:title" content="${esc(fullTitle)}">
 <meta property="og:description" content="${esc(description || site.lead)}">
 <meta property="og:type" content="website">
+<meta property="og:url" content="${canonical}">
+<meta property="og:image" content="${ogImage}">
+<meta property="og:site_name" content="${esc(site.company)}">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="${canonical}">
+${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}
 <meta name="naver-site-verification" content="5f386104910a3afb9ee32b36ac5e4bb6237f8d69">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
@@ -156,10 +168,29 @@ const contactBlock = (rel, compact) => `
   </div>
 </section>`;
 
+
+// ---------- 검색엔진용 구조화 데이터 ----------
+function orgLd(withStores) {
+  const org = {
+    '@type': 'Organization', '@id': SITE_URL + '/#org', name: site.company, alternateName: ['네오아트', 'NEO-ART', site.company_en],
+    url: SITE_URL + '/', telephone: site.phone, email: site.email, logo: SITE_URL + site.hero_image,
+    address: { '@type': 'PostalAddress', streetAddress: site.hq_address, addressCountry: 'KR' },
+    sameAs: [site.smartstore, site.blog, site.instagram].filter(Boolean),
+  };
+  const graph = [org, { '@type': 'WebSite', '@id': SITE_URL + '/#site', url: SITE_URL + '/', name: site.company, inLanguage: 'ko-KR', publisher: { '@id': SITE_URL + '/#org' } }];
+  if (withStores) stores.forEach((s) => graph.push({
+    '@type': /갤러리/.test(s.name) ? 'ArtGallery' : 'Store', name: `${s.name} (${site.company})`, description: s.description,
+    address: { '@type': 'PostalAddress', streetAddress: s.address || s.location, addressCountry: 'KR' },
+    image: (s.images || []).slice(0, 1).map((i) => SITE_URL + i), parentOrganization: { '@id': SITE_URL + '/#org' },
+    ...(s.hours ? { openingHours: s.hours } : {}),
+  }));
+  return { '@context': 'https://schema.org', '@graph': graph };
+}
+
 // ---------- pages ----------
 const pages = [];
 
-pages.push({ url: '/', title: '홈', body: (rel) => `
+pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·르누아르 세계명화 액자와 레플리카 명화 전문 ㈜네오아트플래닝. 원본 데이터 출력에 6~8회 유화 리터칭한 원작 같은 명화, 문화재단·문화예술회관 세계명화 기획전, 명화 아트상품 제작·납품. 킨텍스·시흥·김해공항·해운대 직영매장.', jsonld: orgLd(true), body: (rel) => `
 <section class="hero">
   <div class="wrap hero__grid">
     <div class="hero__text">
@@ -322,7 +353,7 @@ pages.push({ url: '/about/', title: '회사소개', description: '㈜네오아�
 </section>
 ` });
 
-pages.push({ url: '/business/', title: '사업분야', description: '세계명화 제작·유통, 아트굿즈, 직영 매장, 아트상품 공급, 전시용 복제화 공급, 전시기획, 원목액자 수입', body: (rel) => `
+pages.push({ url: '/business/', title: '사업분야', description: '세계명화 레플리카 제작·유통, 명화 아트굿즈·K굿즈, 아르떼뮤지엄 등 아트상품 납품, 전시기획사 전시용 명화 복제화 공급, 세계명화 기획전, 원목액자 수입 유통.', body: (rel) => `
 <section class="pagehead"><div class="wrap"><p class="eyebrow">사업분야</p><h1>명화로 할 수 있는 모든 일</h1><p>제작부터 유통, 매장, 전시까지 직접 합니다.</p></div></section>
 <section class="section"><div class="wrap bizlist">
   ${business.map((b, i) => `<article class="biz" id="biz-${i + 1}">
@@ -332,7 +363,7 @@ pages.push({ url: '/business/', title: '사업분야', description: '세계명�
 </div></section>
 ` });
 
-pages.push({ url: '/exhibitions/', title: '전시기획', description: '클림트전, 모네 & 르누아르전, 색깔여행전, 이중섭전 등 세계명화 레플리카 기획전 패키지와 진행 이력', body: (rel) => `
+pages.push({ url: '/exhibitions/', title: '세계명화 기획전', description: '문화재단·문화예술회관을 위한 세계명화 기획전. 클림트전, 모네 & 르누아르전, 모네전, 색깔여행전, 이중섭전 패키지와 2020년부터의 전시 진행 이력. 작품 대여·운송·설치·도슨트·체험까지.', body: (rel) => `
 <section class="pagehead pagehead--joined"><div class="wrap"><p class="eyebrow">전시기획</p><h1>세계명화 기획전</h1><p>${esc(ex.intro)}</p></div></section>
 
 <section class="section section--flush"><div class="wrap">
@@ -363,7 +394,7 @@ pages.push({ url: '/exhibitions/', title: '전시기획', description: '클림�
 ${contactBlock(rel, true)}
 ` });
 
-pages.push({ url: '/stores/', title: '직영매장 안내', description: '갤러리네오, 갤러리오라, 아트샵 오라 킨텍스·김해공항·해운대 매장 안내', body: (rel) => `
+pages.push({ url: '/stores/', title: '직영매장 안내', description: '세계명화 액자와 아트상품을 직접 보고 살 수 있는 직영매장. 갤러리네오·카페네오(킨텍스 제2전시장), 갤러리오라(시흥하늘휴게소), 아트샵 오라 킨텍스·김해공항·해운대 엑스더스카이점 위치 안내.', jsonld: orgLd(true), body: (rel) => `
 <section class="pagehead"><div class="wrap"><p class="eyebrow">직영매장 안내</p><h1>직영 매장 ${stores.length}곳</h1><p>명화 레플리카와 아트굿즈를 직접 보고 고르실 수 있습니다.</p></div></section>
 <section class="section"><div class="wrap storelist">
   ${stores.map((s, i) => `<article class="store" id="store-${i + 1}">
@@ -397,6 +428,33 @@ pages.push({ url: '/contact/', title: '문의', description: '전시 유치, 명
 ${contactBlock(rel, false)}
 ` });
 
+
+pages.push({ url: '/frames/', title: '세계명화 액자 · 모네 · 고흐 · 클림트 그림 액자', description: '모네 그림 액자, 고흐 그림 액자, 클림트·르누아르 명화 액자. 원본 데이터 캔버스 출력에 6~8회 유화 리터칭한 원작 같은 레플리카 명화를 고급 원목액자에 담았습니다. 네이버 스마트스토어 구매, 직영매장 구매, 공간 맞춤 추천·설치.', image: '/assets/img/frames-monet.jpg',
+  jsonld: { '@context': 'https://schema.org', '@type': 'CollectionPage', name: '세계명화 액자', url: SITE_URL + '/frames/', about: (frames.items || []).map((f) => f.keyword), publisher: { '@id': SITE_URL + '/#org' } },
+  body: (rel) => `
+<section class="pagehead pagehead--joined"><div class="wrap"><p class="eyebrow">레플리카 명화 액자</p><h1>${esc(frames.title)}</h1><p>${esc(frames.intro)}</p></div></section>
+<section class="section section--flush"><div class="wrap framelist">
+  ${(frames.items || []).map((f, i) => `<article class="frameitem" id="${['monet','gogh','klimt','renoir','etc'][i] || 'item-' + (i + 1)}">
+    <figure class="frameitem__img"><img src="${rel(f.image)}" alt="${esc(f.artist)} 레플리카 명화 액자 – ${esc(f.works)}" loading="lazy"></figure>
+    <div class="frameitem__text">
+      <p class="eyebrow">${esc(f.artist)}</p>
+      <h2>${esc(f.keyword)}</h2>
+      <p class="frameitem__works">${esc(f.works)}</p>
+      <p>${esc(f.text)}</p>
+      <div class="aud__cta">
+        <a class="btn btn--solid" href="${esc(site.smartstore)}/search?q=${encodeURIComponent(f.search || f.artist)}" target="_blank" rel="noopener">스마트스토어에서 보기 ↗</a>
+        <a class="btn" href="${rel('/contact/#topic-buy')}">구입 문의</a>
+      </div>
+    </div>
+  </article>`).join('')}
+</div></section>
+<section class="section section--tint"><div class="wrap">
+  ${sectionHead('구입 방법', '편한 방법으로 만나 보세요', '')}
+  <div class="compare">${(frames.ways || []).map((w) => `<div><h3>${esc(w.title)}</h3><p>${esc(w.text)}</p><p><a class="btn" href="${rel(w.link)}"${ext(w.link) ? ' target="_blank" rel="noopener"' : ''}>${esc(w.cta)}${ext(w.link) ? ' ↗' : ''}</a></p></div>`).join('')}</div>
+</div></section>
+${contactBlock(rel, true)}
+` });
+
 // ---------- write ----------
 fs.rmSync(OUT, { recursive: true, force: true });
 for (const p of pages) {
@@ -407,4 +465,14 @@ for (const p of pages) {
 }
 fs.cpSync(path.join(SRC, 'assets'), path.join(OUT, 'assets'), { recursive: true });
 if (fs.existsSync(path.join(SRC, 'static'))) fs.cpSync(path.join(SRC, 'static'), OUT, { recursive: true });
+// 검색엔진용 sitemap.xml / robots.txt
+const today = new Date().toISOString().slice(0, 10);
+fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map((p) => `  <url><loc>${SITE_URL}${p.url}</loc><lastmod>${today}</lastmod><priority>${p.url === '/' ? '1.0' : '0.8'}</priority></url>`).join('\n')}\n</urlset>\n`);
+fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
+// 예전 아임웹 주소 → 새 주소로 자동 이동 (검색에 남아 있는 옛 링크 보호)
+const OLD = { 'index-real': '/', portfolio: '/exhibitions/', 'GalleryAura-real': '/stores/', frameshop: '/frames/', mediaart: '/business/' };
+for (const [from, to] of Object.entries(OLD)) {
+  const dir = path.join(OUT, from); fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'index.html'), `<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>${esc(site.company)}</title><link rel="canonical" href="${SITE_URL}${to}"><meta http-equiv="refresh" content="0; url=${to}"><meta name="robots" content="noindex"></head><body><a href="${to}">${SITE_URL}${to}</a><script>location.replace(${JSON.stringify(to)})</script></body></html>`);
+}
 console.log(`built ${pages.length} pages → ${OUT}${PREVIEW ? ' (preview)' : ''}`);

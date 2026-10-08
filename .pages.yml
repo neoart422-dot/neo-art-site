@@ -22,6 +22,35 @@ content:
           - { name: image, label: 사진, type: image }
           - { name: body, label: 본문, type: text }
 
+  - name: frames
+    label: 세계명화 액자
+    type: file
+    path: src/content/frames.json
+    format: json
+    fields:
+      - { name: title, label: 페이지 제목, type: string }
+      - { name: intro, label: 소개 글, type: text }
+      - name: items
+        label: 작가별 액자
+        type: object
+        list: true
+        fields:
+          - { name: artist, label: 작가, type: string }
+          - { name: keyword, label: 제목 (검색어로 쓰일 말. 예 '모네 그림 액자'), type: string }
+          - { name: works, label: 대표 작품, type: string }
+          - { name: text, label: 설명, type: text }
+          - { name: image, label: 사진, type: image }
+          - { name: search, label: 스마트스토어 검색어, type: string }
+      - name: ways
+        label: 구입 방법
+        type: object
+        list: true
+        fields:
+          - { name: title, label: 제목, type: string }
+          - { name: text, label: 설명, type: text }
+          - { name: cta, label: 버튼 글자, type: string }
+          - { name: link, label: 버튼 링크, type: string }
+
   - name: stores
     label: 매장 안내
     type: file
