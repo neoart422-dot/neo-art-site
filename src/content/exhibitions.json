@@ -1,6 +1,13 @@
 {
   "intro": "문화재단과 문화예술회관을 위한 세계명화 레플리카 순회전을 기획합니다. 작품 대여부터 운송·설치, 도슨트, 미디어아트, 체험 프로그램, 리플렛과 포토존까지 한 번에 준비합니다.",
-  "includes": ["작품 대여 · 무진동 운송 · 설치와 철거", "도슨트 해설 (주요 작품 20점)", "미디어아트 (모션아트 10~20분)", "체험 프로그램 (자석퍼즐 · 색칠엽서 · 미니캔버스)", "포토존 · 리플렛 · 프로그램북 · 색칠북", "작품 네임택 · 설명 패널"],
+  "includes": [
+    "작품 대여 · 무진동 운송 · 설치와 철거",
+    "도슨트 해설 (주요 작품 20점)",
+    "미디어아트 (모션아트 10~20분)",
+    "체험 프로그램 (자석퍼즐 · 색칠엽서 · 미니캔버스)",
+    "포토존 · 리플렛 · 프로그램북 · 색칠북",
+    "작품 네임택 · 설명 패널"
+  ],
   "packages": [
     {
       "title": "황금빛 색채의 비밀, 구스타프 클림트展",
@@ -28,35 +35,137 @@
     },
     {
       "title": "빛의 마법사, 클로드 모네展",
-      "works": "25점",
-      "sections": "모네 단독전, 소규모 전시 공간에 맞춘 구성",
-      "image": "/assets/img/exh-hyundai-kintex-monet.jpg"
+      "works": "40~45점",
+      "sections": "클로드 모네 단독전",
+      "image": "/assets/img/exh-monet-solo.jpg"
     }
   ],
   "history": [
-    { "year": "2026", "title": "대향 이중섭展", "venue": "충주문화관광재단", "image": "" },
-    { "year": "2025", "title": "클로드 모네展", "venue": "인천서구문화재단", "image": "" },
-    { "year": "2025", "title": "구스타프 클림트展", "venue": "충주문화재단 관아갤러리", "image": "" },
-    { "year": "2024", "title": "구스타프 클림트展", "venue": "부산시민회관", "image": "" },
-    { "year": "2024", "title": "모네 & 르누아르展", "venue": "평택 북부문예회관", "image": "" },
-    { "year": "2024", "title": "모네 & 르누아르展", "venue": "인천서구문화재단 청라블루노바홀", "image": "" },
-    { "year": "2024", "title": "모네 & 클림트展", "venue": "성동문화재단", "image": "" },
-    { "year": "2024", "title": "세계명화와 함께하는 색깔여행展", "venue": "속초문화예술회관", "image": "" },
-    { "year": "2023", "title": "구스타프 클림트展", "venue": "평택 남부문화예술회관", "image": "/assets/img/exh-pyeongtaek-klimt.jpg" },
-    { "year": "2023", "title": "모네 · 르누아르展 / 클림트展", "venue": "청남대 호수갤러리", "image": "/assets/img/exh-cheongnamdae-monet-renoir.jpg" },
-    { "year": "2023", "title": "세계명화와 함께하는 색깔여행展", "venue": "논산 연산문화창고", "image": "/assets/img/exh-nonsan-color.jpg" },
-    { "year": "2021", "title": "구스타프 클림트展", "venue": "울산도서관 · 함안문화예술회관 · 경북도서관", "image": "" },
-    { "year": "2021", "title": "세계명화와 함께하는 색깔여행展", "venue": "충주문화회관 · 충북교육문화원", "image": "" },
-    { "year": "2020", "title": "구스타프 클림트展", "venue": "인천 서구문화회관", "image": "/assets/img/exh-incheon-seogu-klimt.jpg" },
-    { "year": "2020", "title": "모네 & 르누아르展", "venue": "충주문화회관", "image": "/assets/img/exh-chungju-monet-renoir.jpg" },
-    { "year": "2020", "title": "모네 & 르누아르展", "venue": "고령 대가야문화누리", "image": "" },
-    { "year": "2020", "title": "클림트展 · 모네 & 르누아르展", "venue": "철원 화강문화관", "image": "" },
-    { "year": "2020", "title": "모네展 / 이중섭 특별기획전", "venue": "현대백화점 킨텍스점 · 충청점", "image": "/assets/img/exh-hyundai-kintex-monet.jpg" }
+    {
+      "year": "2026",
+      "title": "대향 이중섭展",
+      "venue": "충주문화관광재단",
+      "image": ""
+    },
+    {
+      "year": "2025",
+      "title": "클로드 모네展",
+      "venue": "인천서구문화재단",
+      "image": ""
+    },
+    {
+      "year": "2025",
+      "title": "구스타프 클림트展",
+      "venue": "충주문화재단 관아갤러리",
+      "image": ""
+    },
+    {
+      "year": "2024",
+      "title": "구스타프 클림트展",
+      "venue": "부산시민회관",
+      "image": ""
+    },
+    {
+      "year": "2024",
+      "title": "모네 & 르누아르展",
+      "venue": "평택 북부문예회관",
+      "image": ""
+    },
+    {
+      "year": "2024",
+      "title": "모네 & 르누아르展",
+      "venue": "인천서구문화재단 청라블루노바홀",
+      "image": ""
+    },
+    {
+      "year": "2024",
+      "title": "모네 & 클림트展",
+      "venue": "성동문화재단",
+      "image": ""
+    },
+    {
+      "year": "2024",
+      "title": "세계명화와 함께하는 색깔여행展",
+      "venue": "속초문화예술회관",
+      "image": ""
+    },
+    {
+      "year": "2023",
+      "title": "구스타프 클림트展",
+      "venue": "평택 남부문화예술회관",
+      "image": "/assets/img/exh-pyeongtaek-klimt.jpg"
+    },
+    {
+      "year": "2023",
+      "title": "모네 · 르누아르展 / 클림트展",
+      "venue": "청남대 호수갤러리",
+      "image": "/assets/img/exh-cheongnamdae-monet-renoir.jpg"
+    },
+    {
+      "year": "2023",
+      "title": "세계명화와 함께하는 색깔여행展",
+      "venue": "논산 연산문화창고",
+      "image": "/assets/img/exh-nonsan-color.jpg"
+    },
+    {
+      "year": "2021",
+      "title": "구스타프 클림트展",
+      "venue": "울산도서관 · 함안문화예술회관 · 경북도서관",
+      "image": ""
+    },
+    {
+      "year": "2021",
+      "title": "세계명화와 함께하는 색깔여행展",
+      "venue": "충주문화회관 · 충북교육문화원",
+      "image": ""
+    },
+    {
+      "year": "2020",
+      "title": "구스타프 클림트展",
+      "venue": "인천 서구문화회관",
+      "image": "/assets/img/exh-incheon-seogu-klimt.jpg"
+    },
+    {
+      "year": "2020",
+      "title": "모네 & 르누아르展",
+      "venue": "충주문화회관",
+      "image": "/assets/img/exh-chungju-monet-renoir.jpg"
+    },
+    {
+      "year": "2020",
+      "title": "모네 & 르누아르展",
+      "venue": "고령 대가야문화누리",
+      "image": ""
+    },
+    {
+      "year": "2020",
+      "title": "클림트展 · 모네 & 르누아르展",
+      "venue": "철원 화강문화관",
+      "image": ""
+    },
+    {
+      "year": "2020",
+      "title": "모네展 / 이중섭 특별기획전",
+      "venue": "현대백화점 킨텍스점 · 충청점",
+      "image": "/assets/img/exh-hyundai-kintex-monet.jpg"
+    }
   ],
   "supply_title": "전시기획사 작품 공급",
   "supply": [
-    { "title": "프리다 칼로전", "detail": "전시작품 48점 공급", "image": "/assets/img/supply-frida.jpg" },
-    { "title": "오귀스트 르누아르전", "detail": "전시작품 42점 공급", "image": "/assets/img/supply-renoir.jpg" },
-    { "title": "툴루즈 로트렉전", "detail": "전시작품 45점 공급", "image": "/assets/img/supply-lautrec.jpg" }
+    {
+      "title": "프리다 칼로전",
+      "detail": "전시작품 48점 공급",
+      "image": "/assets/img/supply-frida.jpg"
+    },
+    {
+      "title": "오귀스트 르누아르전",
+      "detail": "전시작품 42점 공급",
+      "image": "/assets/img/supply-renoir.jpg"
+    },
+    {
+      "title": "툴루즈 로트렉전",
+      "detail": "전시작품 45점 공급",
+      "image": "/assets/img/supply-lautrec.jpg"
+    }
   ]
 }
