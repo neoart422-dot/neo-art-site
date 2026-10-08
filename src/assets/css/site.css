@@ -279,3 +279,6 @@ p { margin: 0; }
 @media (max-width: 560px) { .aud { grid-template-columns: minmax(0, 1fr); } .aud img { aspect-ratio: 16 / 9; height: auto; } }
 
 .sechead h2 .nb { display: inline-block; }
+
+.pagehead--joined { border-bottom: 0; }
+.section--flush { padding-block-start: 0.5rem; }

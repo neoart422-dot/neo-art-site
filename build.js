@@ -333,10 +333,9 @@ pages.push({ url: '/business/', title: '사업분야', description: '세계명�
 ` });
 
 pages.push({ url: '/exhibitions/', title: '전시기획', description: '클림트전, 모네 & 르누아르전, 색깔여행전, 이중섭전 등 세계명화 레플리카 기획전 패키지와 진행 이력', body: (rel) => `
-<section class="pagehead"><div class="wrap"><p class="eyebrow">전시기획</p><h1>세계명화 기획전</h1><p>${esc(ex.intro)}</p></div></section>
+<section class="pagehead pagehead--joined"><div class="wrap"><p class="eyebrow">전시기획</p><h1>세계명화 기획전</h1><p>${esc(ex.intro)}</p></div></section>
 
-<section class="section"><div class="wrap">
-  ${sectionHead('전시 패키지', '바로 유치할 수 있는 전시', '')}
+<section class="section section--flush"><div class="wrap">
   <div class="pkglist">
     ${(ex.packages || []).map((p) => `<article class="pkg">
       <img src="${rel(p.image)}" alt="${esc(p.title)} 전시 전경" loading="lazy">
