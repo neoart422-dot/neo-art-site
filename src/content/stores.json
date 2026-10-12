@@ -7,8 +7,12 @@
       "location": "킨텍스 제2전시장 1층",
       "address": "경기 고양시 일산서구 킨텍스로, 킨텍스 제2전시장 1층",
       "hours": "",
-      "description": "세계명화 레플리카와 국내 화가 원작을 함께 전시하는 갤러리입니다. 카페와 아트샵을 함께 운영하며, 전시 작품은 현장에서 구입하실 수 있습니다.",
-      "images": ["/assets/img/store-neo-2.jpg", "/assets/img/store-neo-1.jpg", "/assets/img/store-neo-3.jpg"],
+      "description": "세계명화 레플리카와 국내 화가의 원작을 함께 전시하는 갤러리입니다. 카페와 아트샵을 겸하고 있어 차 한 잔과 함께 작품을 감상할 수 있으며, 전시 작품은 현장에서 구입하실 수 있습니다.",
+      "images": [
+        "/assets/img/store-neo-2.jpg",
+        "/assets/img/store-neo-1.jpg",
+        "/assets/img/store-neo-3.jpg"
+      ],
       "map": "https://map.naver.com/p/search/킨텍스%20제2전시장"
     },
     {
@@ -18,8 +22,12 @@
       "location": "시흥하늘휴게소 3층",
       "address": "경기 시흥시 조남동 산15, 시흥하늘휴게소 3층",
       "hours": "",
-      "description": "고속도로 휴게소 안의 세계명화 상설 전시장입니다. 여행길에 들러 명화 레플리카와 아트굿즈를 둘러보실 수 있습니다.",
-      "images": ["/assets/img/store-siheung-1.jpg", "/assets/img/store-siheung-2.jpg", "/assets/img/store-siheung-3.jpg"],
+      "description": "시흥하늘휴게소 3층에 자리한 세계명화 상설 전시장입니다. 여행길에 잠시 들러 명화 레플리카와 아트굿즈를 감상하고 구입하실 수 있습니다.",
+      "images": [
+        "/assets/img/store-siheung-1.jpg",
+        "/assets/img/store-siheung-2.jpg",
+        "/assets/img/store-siheung-3.jpg"
+      ],
       "map": "https://map.naver.com/p/search/시흥하늘휴게소"
     },
     {
@@ -29,8 +37,12 @@
       "location": "킨텍스 제1전시장 1층 로비",
       "address": "경기 고양시 일산서구 킨텍스로 217-60, 킨텍스 제1전시장 1층 (5A 출입구 인근)",
       "hours": "",
-      "description": "명화 액자, 명화 우산, 에코백, 문구 등 아트굿즈를 판매합니다. 전시회 관람객이 많이 찾는 매장입니다.",
-      "images": ["/assets/img/store-kintex1-1.jpg", "/assets/img/store-kintex1-2.jpg", "/assets/img/store-kintex1-3.jpg"],
+      "description": "킨텍스를 찾는 전시 관람객이 즐겨 들르는 아트샵입니다. 명화 액자와 우산, 에코백, 문구 등 다양한 아트굿즈를 만나 보실 수 있습니다.",
+      "images": [
+        "/assets/img/store-kintex1-1.jpg",
+        "/assets/img/store-kintex1-2.jpg",
+        "/assets/img/store-kintex1-3.jpg"
+      ],
       "map": "https://map.naver.com/p/search/킨텍스%20제1전시장"
     },
     {
@@ -40,8 +52,12 @@
       "location": "김해국제공항 국내선 1층",
       "address": "부산 강서구 공항진입로 108, 김해국제공항 국내선청사 1층",
       "hours": "",
-      "description": "명화 아트굿즈와 한국 전통 디자인을 담은 K굿즈를 판매합니다. 여행 선물을 고르기 좋은 매장입니다.",
-      "images": ["/assets/img/store-gimhae-1.jpg", "/assets/img/store-gimhae-2.jpg", "/assets/img/store-gimhae-3.jpg"],
+      "description": "명화 아트굿즈와 한국 전통의 아름다움을 담은 K굿즈를 선보입니다. 여행길 선물을 고르기에 좋은 곳입니다.",
+      "images": [
+        "/assets/img/store-gimhae-1.jpg",
+        "/assets/img/store-gimhae-2.jpg",
+        "/assets/img/store-gimhae-3.jpg"
+      ],
       "map": "https://map.naver.com/p/search/김해국제공항%20국내선"
     },
     {
@@ -50,9 +66,12 @@
       "region": "부산",
       "location": "부산 엑스더스카이 전망대 98층",
       "address": "부산 해운대구 달맞이길 30, 엘시티 랜드마크타워 98층 (BUSAN X the SKY)",
-      "hours": "전망대 운영시간과 같습니다",
-      "description": "해운대 바다가 내려다보이는 전망대 98층의 아트샵입니다. 명화 우산, 모자, 에코백 등 기념품을 판매합니다.",
-      "images": ["/assets/img/store-haeundae-1.jpg", "/assets/img/store-haeundae-2.jpg"],
+      "hours": "전망대 운영시간에 따름",
+      "description": "해운대 바다가 한눈에 내려다보이는 98층 전망대 안의 아트샵입니다. 명화 우산, 모자, 에코백 등 여행의 추억을 담아 갈 기념품을 만나 보세요.",
+      "images": [
+        "/assets/img/store-haeundae-1.jpg",
+        "/assets/img/store-haeundae-2.jpg"
+      ],
       "map": "https://map.naver.com/p/search/부산엑스더스카이"
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "intro": "문화재단과 문화예술회관을 위한 세계명화 레플리카 기획전을 기획합니다. 작품 대여부터 운송·설치, 도슨트, 미디어아트, 체험 프로그램, 리플렛과 포토존까지 한 번에 준비합니다.",
+  "intro": "문화재단과 문화예술회관을 위한 세계명화 기획전을 선보입니다. 작품 대여부터 운송·설치, 도슨트, 미디어아트, 체험 프로그램, 리플렛과 포토존까지 한 번에 준비해 드립니다.",
   "includes": [
     "작품 대여 · 무진동 운송 · 설치와 철거",
     "도슨트 해설 (주요 작품 20점)",
@@ -18,19 +18,19 @@
     {
       "title": "빛을 그리는 화가, 모네 & 르누아르展",
       "works": "40~43점",
-      "sections": "위대한 인상주의자 · 인상주의를 넘어 자신만의 작품 세계로 · 함께한 시간들 · 거장으로의 발돋움 · 인상주의의 탄생 · 예술을 찾아 떠났던 여행지들",
+      "sections": "위대한 인상주의자 · 인상주의를 넘어 자신만의 작품 세계로 · 함께한 시간들 · 거장으로의 발돋움 · 인상주의의 탄생 · 예술을 찾아 떠난 여행지들",
       "image": "/assets/img/exh-cheongnamdae-monet-renoir.jpg"
     },
     {
       "title": "세계명화와 함께하는 색깔여행展",
       "works": "42~48점",
-      "sections": "RED · YELLOW · GREEN · BLUE · BLACK, 작가 16~18명",
+      "sections": "RED · YELLOW · GREEN · BLUE · BLACK (작가 16~18명)",
       "image": "/assets/img/exh-nonsan-color.jpg"
     },
     {
       "title": "대향 이중섭展",
       "works": "약 70점",
-      "sections": "태동기 · 가족과 아이들 · 소의 세계 · 여정 · 편지, 장욱진 비교 코너",
+      "sections": "태동기 · 가족과 아이들 · 소의 세계 · 여정 · 편지 (장욱진 비교 코너 포함)",
       "image": "/assets/img/exh-hyundai-chungcheong-ljs.jpg"
     },
     {
@@ -150,7 +150,7 @@
       "image": "/assets/img/exh-hyundai-kintex-monet.jpg"
     }
   ],
-  "supply_title": "전시기획사 작품 공급",
+  "supply_title": "전시를 위한 레플리카 명화 공급",
   "supply": [
     {
       "title": "프리다 칼로전",

@@ -131,8 +131,8 @@ const contactBlock = (rel, compact) => `
   <div class="wrap contact__grid">
     <div class="contact__info">
       <p class="eyebrow">문의</p>
-      <h2>전시 유치, 명화 구입, 공간 설치</h2>
-      <p>레플리카 명화 전시와 구입, 기업 공간 명화 설치, 아트상품 공급에 관해 무엇이든 물어보세요.</p>
+      <h2><span class="nb">전시 유치,</span> <span class="nb">명화 구입,</span> <span class="nb">공간 설치</span></h2>
+      <p>세계명화 기획전 유치와 명화 구입, 공간 맞춤 설치, 아트상품 공급까지 편하게 문의해 주세요.</p>
       <dl class="contact__dl">
         <div><dt>대표전화</dt><dd><a href="tel:${tel(site.phone)}">${esc(site.phone)}</a></dd></div>
         <div><dt>휴대전화</dt><dd><a href="tel:${tel(site.mobile)}">${esc(site.mobile)}</a></dd></div>
@@ -154,7 +154,7 @@ const contactBlock = (rel, compact) => `
       <div class="form__row">
         <label for="f-topic">문의 종류</label>
         <select id="f-topic" name="문의종류">
-          <option>전시 유치</option><option>명화 구입</option><option>기업·공간 명화 설치</option><option>아트상품 공급·입점</option><option>기타</option>
+          <option>전시 유치</option><option>명화 구입</option><option>공간 맞춤 명화 설치</option><option>아트상품 공급·입점</option><option>기타</option>
         </select>
       </div>
       <div class="form__row">
@@ -205,14 +205,14 @@ pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·�
     </div>
     <figure class="hero__art">
       <img src="${rel(site.hero_image)}" alt="${esc(site.hero_caption_artist)} 〈${esc(site.hero_caption_title)}〉 레플리카">
-      <figcaption>${esc(site.hero_caption_artist)} 〈${esc(site.hero_caption_title)}〉 · ${esc(site.hero_caption_note)}</figcaption>
+      <figcaption>${esc(site.hero_caption_artist)} 〈${esc(site.hero_caption_title)}〉, ${esc(site.hero_caption_note)}</figcaption>
     </figure>
   </div>
 </section>
 
 <section class="section audiences" id="for-you">
   <div class="wrap">
-    ${sectionHead('이런 분들을 위해 일합니다', '네오아트가 드릴 수 있는 것', '')}
+    ${sectionHead('고객별 안내', '찾으시는 서비스를 안내해 드립니다', '')}
     <div class="audgrid">
       ${(site.audiences || []).map((a) => `<article class="aud">
         <img src="${rel(a.image)}" alt="${esc(a.title)}" loading="lazy">
@@ -232,11 +232,11 @@ pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·�
 
 <section class="band">
   <div class="wrap">
-    ${sectionHead('Painting Ovelab', '단순 출력이 아닌, 수차례 리터칭한 원작 같은 그림', '원본 데이터로 출력한 캔버스 위에 6~8회 유화 리터칭을 더해 붓자국과 물감의 두께, 세월이 만든 갈라짐까지 원작처럼 되살립니다.')}
+    ${sectionHead('Painting Ovelab', '출력에서 그치지 않고, 붓으로 완성합니다', '원본 데이터로 출력한 캔버스 위에 6~8회 유화 리터칭을 더해 붓자국과 물감의 두께, 세월이 만든 갈라짐까지 원작처럼 되살립니다.')}
     <ol class="steps">
-      <li><img src="${rel('/assets/img/process-1.jpg')}" alt="캔버스 고해상도 프린팅" loading="lazy"><h3>원본 데이터 · 캔버스 프린팅</h3><p>해외 유명 미술관의 원본 파일을 구입해 색보정한 뒤 캔버스천에 고해상도로 출력합니다.</p></li>
-      <li><img src="${rel('/assets/img/process-2.jpg')}" alt="유화 리터칭 작업" loading="lazy"><h3>Painting Ovelab 리터칭</h3><p>출력한 작품 위에 6~8회 유화 리터칭을 더해 유화의 질감과 색감을 재현합니다.</p></li>
-      <li><img src="${rel('/assets/img/process-3.jpg')}" alt="원목액자 마감" loading="lazy"><h3>작품별 원목액자</h3><p>15년 경력의 액자 전문가가 작품에 가장 어울리는 원목액자를 골라 완성합니다.</p></li>
+      <li><img src="${rel('/assets/img/process-1.jpg')}" alt="캔버스 고해상도 프린팅" loading="lazy"><h3>원본 데이터 · 캔버스 프린팅</h3><p>해외 미술관에서 정식으로 구입한 원본 데이터를 정밀하게 색보정한 뒤, 캔버스에 고해상도로 출력합니다.</p></li>
+      <li><img src="${rel('/assets/img/process-2.jpg')}" alt="유화 리터칭 작업" loading="lazy"><h3>Painting Ovelab 리터칭</h3><p>출력한 작품 위에 6~8회 유화 리터칭을 더해 유화 고유의 질감과 색감을 되살립니다.</p></li>
+      <li><img src="${rel('/assets/img/process-3.jpg')}" alt="원목액자 마감" loading="lazy"><h3>작품별 원목액자</h3><p>15년 경력의 액자 전문가가 작품에 가장 잘 어울리는 원목액자를 골라 마무리합니다.</p></li>
     </ol>
     <p class="more"><a href="${rel('/about/')}#replica">레플리카 명화 자세히 보기 →</a></p>
   </div>
@@ -262,7 +262,7 @@ pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·�
     <div class="exgrid">
       ${(ex.packages || []).slice(0, 4).map((p) => `<article class="excard">
         <img src="${rel(p.image)}" alt="${esc(p.title)} 전시 전경" loading="lazy">
-        <div><h3>${esc(p.title)}</h3><p class="excard__meta">${esc(p.works)} · ${esc(p.sections)}</p></div>
+        <div><h3>${esc(p.title)}</h3><p class="excard__meta">작품 ${esc(p.works)}</p><p class="excard__meta">${esc(p.sections)}</p></div>
       </article>`).join('')}
     </div>
     <p class="more"><a href="${rel('/exhibitions/')}">전시 패키지와 진행 이력 보기 →</a></p>
@@ -274,8 +274,8 @@ pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·�
     <div class="shopband__img">${figure(rel, '/assets/img/goods-5.jpg', '명화 3단 우산')}</div>
     <div class="shopband__text">
       <p class="eyebrow">온라인 아트샵</p>
-      <h2>명화 액자와 아트굿즈를 집에서 주문하세요</h2>
-      <p>국내 최대 규모로 보유한 세계명화 레플리카와 원목액자, 명화 우산·파우치·에코백 등 아트굿즈를 네이버 스마트스토어에서 판매합니다.</p>
+      <h2>명화 액자와 아트굿즈, 온라인으로 편하게 만나 보세요</h2>
+      <p>국내 최대 규모의 세계명화 레플리카와 원목액자, 명화 우산·파우치·에코백 등 아트굿즈를 네이버 스마트스토어에서 만나 보실 수 있습니다.</p>
       <a class="btn btn--solid" href="${esc(site.smartstore)}" target="_blank" rel="noopener">스마트스토어 바로가기 ↗</a>
     </div>
   </div>
@@ -294,7 +294,7 @@ pages.push({ url: '/about/', title: '회사소개', description: '㈜네오아�
 
 <section class="section">
   <div class="wrap greeting">
-    <div class="greeting__head"><p class="eyebrow">인사말</p><h2>${esc(site.greeting_title)}</h2><p class="hero__en">${esc(site.headline_en)}</p></div>
+    <div class="greeting__head"><p class="eyebrow">인사말</p><h2>${esc(site.greeting_title)}</h2><p class="hero__en">${esc(site.greeting_en || site.headline_en)}</p></div>
     <div class="greeting__body prose">${paras(site.greeting)}<p class="sign">${esc(site.company)} 대표 <strong>${esc(site.ceo)}</strong></p></div>
   </div>
 </section>
@@ -316,11 +316,11 @@ pages.push({ url: '/about/', title: '회사소개', description: '㈜네오아�
 
 <section class="section" id="replica">
   <div class="wrap">
-    ${sectionHead('레플리카 명화란?', '명화를 복제하는 방법은 여러 가지입니다', '')}
+    ${sectionHead('레플리카 명화란?', '명화를 재현하는 방법은 여러 가지입니다', '')}
     <div class="compare">
-      <div><h3>아트포스터</h3><p>종이 위에 단순히 출력한 그림입니다.</p></div>
-      <div><h3>모사화</h3><p>화가가 명화를 보고 비슷하게 따라 그린 그림입니다. 원작과 느낌이나 색상 차이가 커서 선호도가 낮습니다.</p></div>
-      <div class="compare__ours"><h3>네오아트 레플리카</h3><p>실제 그림 재료인 캔버스천에 원본 디지털 파일을 출력하고, 유화물감으로 리터칭해 명화의 감동을 그대로 전합니다.</p></div>
+      <div><h3>아트포스터</h3><p>종이에 인쇄한 그림입니다. 평면적이어서 붓 터치와 물감의 질감은 느낄 수 없습니다.</p></div>
+      <div><h3>모사화</h3><p>화가가 원작을 보며 손으로 따라 그린 그림입니다. 그리는 사람에 따라 원작과 색감·분위기가 크게 달라질 수 있습니다.</p></div>
+      <div class="compare__ours"><h3>네오아트 레플리카</h3><p>유화의 바탕인 캔버스에 원본 디지털 데이터를 출력하고 유화 물감으로 직접 리터칭해, 원작의 색감과 질감을 그대로 전합니다.</p></div>
     </div>
   </div>
 </section>
@@ -328,11 +328,11 @@ pages.push({ url: '/about/', title: '회사소개', description: '㈜네오아�
 <section class="section section--tint">
   <div class="wrap ovelab">
     <div class="ovelab__text">
-      <p class="eyebrow">독자개발 기법</p>
+      <p class="eyebrow">독자 개발 기법</p>
       <h2>Painting Ovelab</h2>
       <div class="prose">
         <p>원작의 색상과 세부 묘사는 디지털 프린팅으로 구현하고, 작품에 생명력을 불어넣는 유화 특유의 돌출 질감과 생생한 화면은 수작업으로 마무리합니다.</p>
-        <p>디지털 출력 후 약 6~8회 유화 리터칭으로 표면을 처리해, 물감의 질감이 눈으로 느껴지고 손에 묻어날 것 같은 생생함을 살립니다. 오랜 세월이 만든 표면의 크랙(갈라짐)까지 섬세하게 표현합니다.</p>
+        <p>디지털 출력 후 6~8회에 걸친 유화 리터칭으로 표면을 다듬어, 물감이 손끝에 묻어날 듯한 생생한 질감을 살립니다. 오랜 세월이 남긴 표면의 크랙(갈라짐)까지 섬세하게 표현합니다.</p>
       </div>
     </div>
     <div class="ovelab__imgs">
@@ -344,17 +344,17 @@ pages.push({ url: '/about/', title: '회사소개', description: '㈜네오아�
 
 <section class="section">
   <div class="wrap">
-    ${sectionHead('액자 복제', '액자까지 원작 그대로', '밀레 〈이삭줍기〉는 오르세 미술관에 걸린 원작의 액자까지 복제했습니다.')}
+    ${sectionHead('액자 재현', '액자까지 원작 그대로', '밀레 〈이삭줍기〉는 오르세 미술관에 걸린 원작의 액자까지 그대로 재현했습니다.')}
     <div class="pair">
       ${figure(rel, '/assets/img/frame-original.jpg', '오르세 미술관에 전시된 원작과 액자')}
-      ${figure(rel, '/assets/img/frame-replica.jpg', '네오아트가 복제한 작품과 액자')}
+      ${figure(rel, '/assets/img/frame-replica.jpg', '네오아트가 재현한 작품과 액자')}
     </div>
   </div>
 </section>
 ` });
 
-pages.push({ url: '/business/', title: '사업분야', description: '세계명화 레플리카 제작·유통, 명화 아트굿즈·K굿즈, 아르떼뮤지엄 등 아트상품 납품, 전시기획사 전시용 명화 복제화 공급, 세계명화 기획전, 원목액자 수입 유통.', body: (rel) => `
-<section class="pagehead"><div class="wrap"><p class="eyebrow">사업분야</p><h1>명화로 할 수 있는 모든 일</h1><p>제작부터 유통, 매장, 전시까지 직접 합니다.</p></div></section>
+pages.push({ url: '/business/', title: '사업분야', description: '세계명화 레플리카 제작·유통, 명화 아트굿즈·K굿즈, 아르떼뮤지엄 등 아트상품 납품, 전시기획사 전시용 레플리카 명화 공급, 세계명화 기획전, 원목액자 수입 유통.', body: (rel) => `
+<section class="pagehead"><div class="wrap"><p class="eyebrow">사업분야</p><h1>명화로 할 수 있는 모든 일</h1><p>제작과 유통부터 매장 운영, 전시기획까지 네오아트가 직접 맡습니다.</p></div></section>
 <section class="section"><div class="wrap bizlist">
   ${business.map((b, i) => `<article class="biz" id="biz-${i + 1}">
     <div class="biz__text"><p class="biz__no">${String(i + 1).padStart(2, '0')}</p><h2>${esc(b.title)}</h2><p>${esc(b.summary)}</p></div>
@@ -370,10 +370,10 @@ pages.push({ url: '/exhibitions/', title: '세계명화 기획전', description:
   <div class="pkglist">
     ${(ex.packages || []).map((p) => `<article class="pkg">
       <img src="${rel(p.image)}" alt="${esc(p.title)} 전시 전경" loading="lazy">
-      <div class="pkg__body"><h3>${esc(p.title)}</h3><p class="pkg__works">${esc(p.works)}</p><p>${esc(p.sections)}</p></div>
+      <div class="pkg__body"><h3>${esc(p.title)}</h3><p class="pkg__works">작품 ${esc(p.works)}</p><p>${esc(p.sections)}</p></div>
     </article>`).join('')}
   </div>
-  <div class="includes"><h3>모든 전시에 함께 준비합니다</h3><ul>${(ex.includes || []).map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
+  <div class="includes"><h3>모든 전시에 함께 준비해 드립니다</h3><ul>${(ex.includes || []).map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
 </div></section>
 
 <section class="section section--tint"><div class="wrap">
@@ -388,14 +388,14 @@ pages.push({ url: '/exhibitions/', title: '세계명화 기획전', description:
 </div></section>
 
 <section class="section"><div class="wrap">
-  ${sectionHead('작품 공급', ex.supply_title || '전시기획사 작품 공급', '전시기획사에 전시용 명화 복제화를 납품합니다.')}
+  ${sectionHead('작품 공급', ex.supply_title || '전시기획사 작품 공급', '프리다 칼로전, 르누아르전, 툴루즈 로트렉전 등 전시기획사의 전시에 작품을 납품했습니다.')}
   <div class="supply">${(ex.supply || []).map((s) => `<article>${figure(rel, s.image, '')}<h3>${esc(s.title)}</h3><p>${esc(s.detail)}</p></article>`).join('')}</div>
 </div></section>
 ${contactBlock(rel, true)}
 ` });
 
 pages.push({ url: '/stores/', title: '직영매장 안내', description: '세계명화 액자와 아트상품을 직접 보고 살 수 있는 직영매장. 갤러리네오·카페네오(킨텍스 제2전시장), 갤러리오라(시흥하늘휴게소), 아트샵 오라 킨텍스·김해공항·해운대 엑스더스카이점 위치 안내.', jsonld: orgLd(true), body: (rel) => `
-<section class="pagehead"><div class="wrap"><p class="eyebrow">직영매장 안내</p><h1>직영 매장 ${stores.length}곳</h1><p>명화 레플리카와 아트굿즈를 직접 보고 고르실 수 있습니다.</p></div></section>
+<section class="pagehead"><div class="wrap"><p class="eyebrow">직영매장 안내</p><h1>직영 매장 ${stores.length}곳</h1><p>명화 레플리카와 아트굿즈를 가까이에서 보고 고르실 수 있습니다.</p></div></section>
 <section class="section"><div class="wrap storelist">
   ${stores.map((s, i) => `<article class="store" id="store-${i + 1}">
     <div class="store__imgs">${(s.images || []).filter(Boolean).map((src, j) => `<img src="${rel(src)}" alt="${esc(s.name)} 매장 사진 ${j + 1}" loading="lazy">`).join('')}</div>
@@ -424,7 +424,7 @@ pages.push({ url: '/news/', title: '소식', description: '네오아트플래닝
 ` });
 
 pages.push({ url: '/contact/', title: '문의', description: '전시 유치, 명화 구입, 기업 공간 명화 설치, 아트상품 공급 문의', body: (rel) => `
-<section class="pagehead"><div class="wrap"><p class="eyebrow">문의</p><h1>무엇이든 물어보세요</h1><p>남겨 주신 연락처로 담당자가 연락드립니다.</p></div></section>
+<section class="pagehead"><div class="wrap"><p class="eyebrow">문의</p><h1>편하게 문의해 주세요</h1><p>남겨 주신 연락처로 담당자가 빠르게 연락드리겠습니다.</p></div></section>
 ${contactBlock(rel, false)}
 ` });
 
@@ -448,6 +448,10 @@ pages.push({ url: '/frames/', title: '세계명화 액자 · 모네 · 고흐 ·
     </div>
   </article>`).join('')}
 </div></section>
+${(frames.installs || []).length ? `<section class="section"><div class="wrap">
+  ${sectionHead('설치 사례', frames.installs_title || '설치 사례', frames.installs_lead || '')}
+  <div class="gallery">${frames.installs.map((x) => figure(rel, x.image, x.caption)).join('')}</div>
+</div></section>` : ''}
 <section class="section section--tint"><div class="wrap">
   ${sectionHead('구입 방법', '편한 방법으로 만나 보세요', '')}
   <div class="compare">${(frames.ways || []).map((w) => `<div><h3>${esc(w.title)}</h3><p>${esc(w.text)}</p><p><a class="btn" href="${rel(w.link)}"${ext(w.link) ? ' target="_blank" rel="noopener"' : ''}>${esc(w.cta)}${ext(w.link) ? ' ↗' : ''}</a></p></div>`).join('')}</div>
