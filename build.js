@@ -203,10 +203,13 @@ pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·�
         <a class="btn" href="${rel('/contact/')}">바로 문의하기</a>
       </div>
     </div>
-    <figure class="hero__art">
+    ${(site.hero_images || []).length ? `<div class="hero__duo">${site.hero_images.map((h) => `<figure class="hero__shot">
+      <img src="${rel(h.image)}" alt="${esc(h.caption)}"${h.position ? ` style="object-position:${esc(h.position)}"` : ''}>
+      <figcaption>${esc(h.caption)}</figcaption>
+    </figure>`).join('')}</div>` : `<figure class="hero__art">
       <img src="${rel(site.hero_image)}" alt="${esc(site.hero_caption_artist)} 〈${esc(site.hero_caption_title)}〉 레플리카">
       <figcaption>${esc(site.hero_caption_artist)} 〈${esc(site.hero_caption_title)}〉, ${esc(site.hero_caption_note)}</figcaption>
-    </figure>
+    </figure>`}
   </div>
 </section>
 

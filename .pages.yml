@@ -149,6 +149,14 @@ content:
       - { name: hero_caption_title, label: 액자 사진 작품명, type: string }
       - { name: hero_caption_artist, label: 액자 사진 작가·연도, type: string }
       - { name: hero_caption_note, label: 액자 사진 설명, type: string }
+      - name: hero_images
+        label: 첫 화면 사진 (넣으면 위 액자 사진 대신 나옴)
+        type: object
+        list: true
+        fields:
+          - { name: image, label: 사진, type: image }
+          - { name: caption, label: 사진 설명, type: string }
+          - { name: position, label: 사진 보이는 위치 (예 '50% 50%'), type: string }
       - name: audiences
         label: 고객별 안내 카드 (첫 화면)
         type: object
