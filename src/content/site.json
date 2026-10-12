@@ -11,14 +11,14 @@
   "hero_caption_note": "1867 · 네오아트 레플리카",
   "hero_images": [
     {
-      "image": "/assets/img/store-siheung-2.jpg",
+      "image": "/assets/img/store-siheung-hall.jpg",
       "caption": "갤러리오라 (시흥하늘휴게소 3층)",
-      "position": "50% 50%"
+      "position": "60% 55%"
     },
     {
-      "image": "/assets/img/store-neo-1.jpg",
+      "image": "/assets/img/store-neo-hall.jpg",
       "caption": "갤러리네오 (킨텍스 제2전시장 1층)",
-      "position": "35% 50%"
+      "position": "50% 30%"
     }
   ],
   "greeting_title": "명화의 감동을, 일상 가까이에",
