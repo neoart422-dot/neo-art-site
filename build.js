@@ -132,7 +132,7 @@ const contactBlock = (rel, compact) => `
     <div class="contact__info">
       <p class="eyebrow">문의</p>
       <h2><span class="nb">전시 유치,</span> <span class="nb">명화 구입,</span> <span class="nb">공간 설치</span></h2>
-      <p>세계명화 기획전 유치와 명화 구입, 공간 맞춤 설치, 아트상품 공급까지 편하게 문의해 주세요.</p>
+      <p>궁금하신 내용을 남겨 주시면 담당자가 확인한 뒤 자세히 안내해 드립니다.</p>
       <dl class="contact__dl">
         <div><dt>대표전화</dt><dd><a href="tel:${tel(site.phone)}">${esc(site.phone)}</a></dd></div>
         <div><dt>휴대전화</dt><dd><a href="tel:${tel(site.mobile)}">${esc(site.mobile)}</a></dd></div>
@@ -238,7 +238,7 @@ pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·�
     ${sectionHead('Painting Ovelab', '출력에서 그치지 않고, 붓으로 완성합니다', '원본 데이터로 출력한 캔버스 위에 6~8회 유화 리터칭을 더해 붓자국과 물감의 두께, 세월이 만든 갈라짐까지 원작처럼 되살립니다.')}
     <ol class="steps">
       <li><img src="${rel('/assets/img/process-1.jpg')}" alt="캔버스 고해상도 프린팅" loading="lazy"><h3>원본 데이터 · 캔버스 프린팅</h3><p>해외 미술관에서 정식으로 구입한 원본 데이터를 정밀하게 색보정한 뒤, 캔버스에 고해상도로 출력합니다.</p></li>
-      <li><img src="${rel('/assets/img/process-2.jpg')}" alt="유화 리터칭 작업" loading="lazy"><h3>Painting Ovelab 리터칭</h3><p>출력한 작품 위에 6~8회 유화 리터칭을 더해 유화 고유의 질감과 색감을 되살립니다.</p></li>
+      <li><img src="${rel('/assets/img/process-2.jpg')}" alt="유화 리터칭 작업" loading="lazy"><h3>Painting Ovelab 리터칭</h3><p>붓으로 물감을 여러 겹 올려 유화 고유의 입체감과 색의 깊이를 되살립니다.</p></li>
       <li><img src="${rel('/assets/img/process-3.jpg')}" alt="원목액자 마감" loading="lazy"><h3>작품별 원목액자</h3><p>15년 경력의 액자 전문가가 작품에 가장 잘 어울리는 원목액자를 골라 마무리합니다.</p></li>
     </ol>
     <p class="more"><a href="${rel('/about/')}#replica">레플리카 명화 자세히 보기 →</a></p>
@@ -247,7 +247,7 @@ pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·�
 
 <section class="section">
   <div class="wrap">
-    ${sectionHead('직영 매장', `전국 ${stores.length}곳에서 만나는 명화`, '')}
+    ${sectionHead('직영 매장', '명화를 가까이에서 만나는 곳', '')}
     <div class="storestrip">
       ${stores.map((s) => `<a class="storecard" href="${rel('/stores/')}#store-${stores.indexOf(s) + 1}">
         <img src="${rel((s.images || [])[0])}" alt="${esc(s.name)}" loading="lazy">
@@ -306,12 +306,12 @@ pages.push({ url: '/about/', title: '회사소개', description: '㈜네오아�
   <div class="wrap">
     ${sectionHead('회사 개요', '한눈에 보는 네오아트플래닝', '')}
     <div class="tablewrap"><table class="facts">
-      <tr><th>회사명</th><td>${esc(site.company)} ${esc(site.company_en)}</td></tr>
+      <tr><th>회사명</th><td>${esc(site.company)} (${esc(site.company_en)})</td></tr>
       <tr><th>대표자</th><td>${esc(site.ceo)}</td></tr>
       <tr><th>본사</th><td>${esc(site.hq_address)}</td></tr>
       <tr><th>직영 매장</th><td>${stores.map((s) => `${esc(s.name)} <span class="muted">${esc(s.location)}</span>`).join('<br>')}</td></tr>
       <tr><th>사업 분야</th><td>${business.map((b) => esc(b.title)).join(' · ')}</td></tr>
-      <tr><th>핵심 기술</th><td>『Painting Ovelab』 고해상도 캔버스 프린팅 + 6~8회 유화 리터칭</td></tr>
+      <tr><th>핵심 기술</th><td>『Painting Ovelab』 (고해상도 캔버스 프린팅과 6~8회 유화 리터칭)</td></tr>
       <tr><th>문의</th><td>${esc(site.phone)} · ${esc(site.mobile)} · ${esc(site.email)}</td></tr>
     </table></div>
   </div>
@@ -334,7 +334,7 @@ pages.push({ url: '/about/', title: '회사소개', description: '㈜네오아�
       <p class="eyebrow">독자 개발 기법</p>
       <h2>Painting Ovelab</h2>
       <div class="prose">
-        <p>원작의 색상과 세부 묘사는 디지털 프린팅으로 구현하고, 작품에 생명력을 불어넣는 유화 특유의 돌출 질감과 생생한 화면은 수작업으로 마무리합니다.</p>
+        <p>원작의 색상과 세부 묘사는 디지털 프린팅으로 구현하고, 작품에 생명력을 불어넣는 유화 특유의 도톰한 질감과 깊이 있는 화면은 손으로 마무리합니다.</p>
         <p>디지털 출력 후 6~8회에 걸친 유화 리터칭으로 표면을 다듬어, 물감이 손끝에 묻어날 듯한 생생한 질감을 살립니다. 오랜 세월이 남긴 표면의 크랙(갈라짐)까지 섬세하게 표현합니다.</p>
       </div>
     </div>
@@ -357,7 +357,7 @@ pages.push({ url: '/about/', title: '회사소개', description: '㈜네오아�
 ` });
 
 pages.push({ url: '/business/', title: '사업분야', description: '세계명화 레플리카 제작·유통, 명화 아트굿즈·K굿즈, 아르떼뮤지엄 등 아트상품 납품, 전시기획사 전시용 레플리카 명화 공급, 세계명화 기획전, 원목액자 수입 유통.', body: (rel) => `
-<section class="pagehead"><div class="wrap"><p class="eyebrow">사업분야</p><h1>명화로 할 수 있는 모든 일</h1><p>제작과 유통부터 매장 운영, 전시기획까지 네오아트가 직접 맡습니다.</p></div></section>
+<section class="pagehead"><div class="wrap"><p class="eyebrow">사업분야</p><h1>세계명화의 모든 것을 한곳에서</h1><p>제작과 유통부터 매장 운영, 전시기획까지 네오아트가 직접 맡습니다.</p></div></section>
 <section class="section"><div class="wrap bizlist">
   ${business.map((b, i) => `<article class="biz" id="biz-${i + 1}">
     <div class="biz__text"><p class="biz__no">${String(i + 1).padStart(2, '0')}</p><h2>${esc(b.title)}</h2><p>${esc(b.summary)}</p></div>
@@ -426,8 +426,8 @@ pages.push({ url: '/news/', title: '소식', description: '네오아트플래닝
 </div></section>
 ` });
 
-pages.push({ url: '/contact/', title: '문의', description: '전시 유치, 명화 구입, 기업 공간 명화 설치, 아트상품 공급 문의', body: (rel) => `
-<section class="pagehead"><div class="wrap"><p class="eyebrow">문의</p><h1>편하게 문의해 주세요</h1><p>남겨 주신 연락처로 담당자가 빠르게 연락드리겠습니다.</p></div></section>
+pages.push({ url: '/contact/', title: '문의', description: '세계명화 기획전 유치, 명화 구입, 공간 맞춤 명화 설치, 아트상품 공급 문의', body: (rel) => `
+<section class="pagehead"><div class="wrap"><p class="eyebrow">문의</p><h1>편하게 문의해 주세요</h1><p>전화, 이메일, 아래 문의 양식 가운데 편하신 방법으로 연락 주세요.</p></div></section>
 ${contactBlock(rel, false)}
 ` });
 
