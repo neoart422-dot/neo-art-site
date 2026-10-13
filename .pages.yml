@@ -157,6 +157,7 @@ content:
           - { name: image, label: 사진, type: image }
           - { name: caption, label: 사진 설명, type: string }
           - { name: position, label: 사진 보이는 위치 (예 '50% 50%'), type: string }
+          - { name: fit, label: "사진 전체 보이기 (액자 사진이면 'contain')", type: string }
       - name: audiences
         label: 고객별 안내 카드 (첫 화면)
         type: object

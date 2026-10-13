@@ -218,7 +218,7 @@ pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·�
     ${sectionHead('고객별 안내', '찾으시는 서비스를 안내해 드립니다', '')}
     <div class="audgrid${(site.audiences || []).length === 4 ? ' audgrid--4' : ''}">
       ${(site.audiences || []).map((a) => `<article class="aud">
-        <img src="${rel(a.image)}" alt="${esc(a.title)}" loading="lazy"${a.position ? ` style="object-position:${esc(a.position)}"` : ''}>
+        <img src="${rel(a.image)}" alt="${esc(a.title)}" loading="lazy"${a.fit === 'contain' ? ' class="aud__img--whole"' : ''}${a.position ? ` style="object-position:${esc(a.position)}"` : ''}>
         <div class="aud__body">
           <p class="aud__who">${esc(a.who)}</p>
           <h3>${esc(a.title)}</h3>

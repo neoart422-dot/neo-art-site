@@ -55,7 +55,8 @@
       "cta": "공급 사례 보기",
       "link": "/exhibitions/#supply",
       "cta2": "작품 공급 문의",
-      "link2": "/contact/#topic-artwork"
+      "link2": "/contact/#topic-artwork",
+      "fit": "contain"
     },
     {
       "who": "명화 액자를 찾는 고객",
@@ -65,7 +66,8 @@
       "cta": "명화 액자 보기",
       "link": "/frames/",
       "cta2": "구입·설치 문의",
-      "link2": "/contact/#topic-buy"
+      "link2": "/contact/#topic-buy",
+      "fit": "contain"
     },
     {
       "who": "전시장 · 카페 · 기프트샵 운영자",

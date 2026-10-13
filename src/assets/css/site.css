@@ -280,6 +280,7 @@ p { margin: 0; }
 .audgrid--4 .aud img { height: 100%; aspect-ratio: auto; }
 .aud { display: grid; grid-template-rows: auto 1fr; background: var(--paper); border: 1px solid var(--line); }
 .aud img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.aud img.aud__img--whole { object-fit: contain; background: #fff; padding: clamp(0.6rem, 1.5vw, 1rem); box-sizing: border-box; }
 .aud__body { display: flex; flex-direction: column; gap: 0.65rem; padding: clamp(1.1rem, 2.5vw, 1.5rem); }
 .aud__who { font-size: var(--step--1); color: var(--gilt); font-weight: 600; letter-spacing: 0.04em; }
 .aud h3 { font-size: 1.3rem; }
