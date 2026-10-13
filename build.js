@@ -247,7 +247,7 @@ pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·�
 
 <section class="section">
   <div class="wrap">
-    ${sectionHead('직영 매장', '명화를 가까이에서 만나는 곳', '')}
+    ${sectionHead('직영 매장', '명화 액자와 아트상품, 이제 매장에서 직접 만나 보세요', '')}
     <div class="storestrip">
       ${stores.map((s) => `<a class="storecard" href="${rel('/stores/')}#store-${stores.indexOf(s) + 1}">
         <img src="${rel((s.images || [])[0])}" alt="${esc(s.name)}" loading="lazy">
