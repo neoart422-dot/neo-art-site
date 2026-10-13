@@ -153,11 +153,6 @@
   "supply_title": "전시를 위한 레플리카 명화 공급",
   "supply": [
     {
-      "title": "프리다 칼로전",
-      "detail": "전시작품 48점 공급",
-      "image": "/assets/img/supply-frida.jpg"
-    },
-    {
       "title": "오귀스트 르누아르전",
       "detail": "전시작품 42점 공급",
       "image": "/assets/img/supply-renoir.jpg"
@@ -166,6 +161,16 @@
       "title": "툴루즈 로트렉전",
       "detail": "전시작품 45점 공급",
       "image": "/assets/img/supply-lautrec.jpg"
+    },
+    {
+      "title": "프리다 칼로전",
+      "detail": "전시작품 48점 공급",
+      "image": "/assets/img/supply-frida.jpg"
+    },
+    {
+      "title": "구스타프 클림트전",
+      "detail": "전시작품 50점 공급",
+      "image": "/assets/img/frames-klimt.jpg"
     }
   ]
 }

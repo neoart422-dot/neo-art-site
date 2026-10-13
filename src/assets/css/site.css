@@ -231,11 +231,11 @@ p { margin: 0; }
 .includes ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 0.5rem 1.5rem; }
 .includes li::before { content: "— "; color: var(--gilt); }
 .gallery { margin-top: 2.5rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 1.25rem; }
-.supply { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2rem); }
+.supply { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2rem); }
 .supply article { display: grid; gap: 0.4rem; align-content: start; }
 .supply .plate img { aspect-ratio: 4 / 5; object-fit: contain; background: transparent; }
 .supply p { color: var(--muted); font-size: 0.92rem; }
-@media (max-width: 640px) { .supply { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 860px) { .supply { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* 매장 */
 .storelist { display: grid; gap: clamp(3rem, 7vw, 5rem); }
@@ -275,6 +275,9 @@ p { margin: 0; }
 /* 고객별 안내 (홈) */
 .audiences { padding-block-start: clamp(1rem, 3vw, 2rem); }
 .audgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 1.75rem); }
+.audgrid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.audgrid--4 .aud { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); grid-template-rows: auto; }
+.audgrid--4 .aud img { height: 100%; aspect-ratio: auto; }
 .aud { display: grid; grid-template-rows: auto 1fr; background: var(--paper); border: 1px solid var(--line); }
 .aud img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .aud__body { display: flex; flex-direction: column; gap: 0.65rem; padding: clamp(1.1rem, 2.5vw, 1.5rem); }
@@ -283,8 +286,8 @@ p { margin: 0; }
 .aud__body > p:not(.aud__who) { color: var(--muted); font-size: 0.95rem; }
 .aud__cta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; padding-top: 0.4rem; }
 .aud__cta .btn { font-size: 0.875rem; padding: 0.6em 1em; }
-@media (max-width: 900px) { .audgrid { grid-template-columns: minmax(0, 1fr); } .aud { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); grid-template-rows: auto; } .aud img { height: 100%; aspect-ratio: auto; } }
-@media (max-width: 560px) { .aud { grid-template-columns: minmax(0, 1fr); } .aud img { aspect-ratio: 16 / 9; height: auto; } }
+@media (max-width: 900px) { .audgrid, .audgrid--4 { grid-template-columns: minmax(0, 1fr); } .aud { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); grid-template-rows: auto; } .aud img { height: 100%; aspect-ratio: auto; } }
+@media (max-width: 560px) { .aud, .audgrid--4 .aud { grid-template-columns: minmax(0, 1fr); } .aud img, .audgrid--4 .aud img { aspect-ratio: 16 / 9; height: auto; } }
 
 .sechead h2 .nb, .contact__info h2 .nb { display: inline-block; }
 

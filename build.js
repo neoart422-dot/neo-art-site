@@ -154,7 +154,7 @@ const contactBlock = (rel, compact) => `
       <div class="form__row">
         <label for="f-topic">문의 종류</label>
         <select id="f-topic" name="문의종류">
-          <option>전시 유치</option><option>명화 구입</option><option>공간 맞춤 명화 설치</option><option>아트상품 공급·입점</option><option>기타</option>
+          <option>전시 유치</option><option>전시용 작품 공급</option><option>명화 구입</option><option>공간 맞춤 명화 설치</option><option>아트상품 공급·입점</option><option>기타</option>
         </select>
       </div>
       <div class="form__row">
@@ -162,7 +162,7 @@ const contactBlock = (rel, compact) => `
         <textarea id="f-msg" name="내용" rows="5" required></textarea>
       </div>
       <button type="submit" class="btn btn--solid">문의 보내기</button>
-      <script>(function(){var m={'#topic-exhibit':'전시 유치','#topic-buy':'명화 구입','#topic-supply':'아트상품 공급·입점'};var v=m[location.hash];if(v){var s=document.getElementById('f-topic');if(s)s.value=v;}})();</script>
+      <script>(function(){var m={'#topic-exhibit':'전시 유치','#topic-artwork':'전시용 작품 공급','#topic-buy':'명화 구입','#topic-supply':'아트상품 공급·입점'};var v=m[location.hash];if(v){var s=document.getElementById('f-topic');if(s)s.value=v;}})();</script>
       <p class="form__note" id="form-note" hidden>미리보기에서는 문의가 전송되지 않습니다. 실제 홈페이지에서는 이메일로 전달됩니다.</p>
     </form>
   </div>
@@ -216,7 +216,7 @@ pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·�
 <section class="section audiences" id="for-you">
   <div class="wrap">
     ${sectionHead('고객별 안내', '찾으시는 서비스를 안내해 드립니다', '')}
-    <div class="audgrid">
+    <div class="audgrid${(site.audiences || []).length === 4 ? ' audgrid--4' : ''}">
       ${(site.audiences || []).map((a) => `<article class="aud">
         <img src="${rel(a.image)}" alt="${esc(a.title)}" loading="lazy">
         <div class="aud__body">
@@ -390,8 +390,8 @@ pages.push({ url: '/exhibitions/', title: '세계명화 기획전', description:
   </div>
 </div></section>
 
-<section class="section"><div class="wrap">
-  ${sectionHead('작품 공급', ex.supply_title || '전시기획사 작품 공급', '프리다 칼로전, 르누아르전, 툴루즈 로트렉전 등 전시기획사의 전시에 작품을 납품했습니다.')}
+<section class="section" id="supply"><div class="wrap">
+  ${sectionHead('작품 공급', ex.supply_title || '전시기획사 작품 공급', '전시기획사의 대형 전시에 쓰이는 레플리카 명화를 제작해 공급합니다.')}
   <div class="supply">${(ex.supply || []).map((s) => `<article>${figure(rel, s.image, '')}<h3>${esc(s.title)}</h3><p>${esc(s.detail)}</p></article>`).join('')}</div>
 </div></section>
 ${contactBlock(rel, true)}
