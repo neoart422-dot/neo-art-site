@@ -190,7 +190,7 @@ function orgLd(withStores) {
 // ---------- pages ----------
 const pages = [];
 
-pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·르누아르 세계명화 액자와 레플리카 명화 전문 ㈜네오아트플래닝. 원본 데이터 출력에 6~8회 유화 리터칭한 원작 같은 명화, 문화재단·문화예술회관 세계명화 기획전, 명화 아트상품 제작·납품. 킨텍스·시흥·김해공항·해운대 직영매장.', jsonld: orgLd(true), body: (rel) => `
+pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·르누아르 세계명화 액자와 레플리카 명화 전문 ㈜네오아트플래닝. 원본 데이터 출력에 6~8회 리터칭으로 완성한 원작 같은 명화, 문화재단·문화예술회관 세계명화 기획전, 명화 아트상품 제작·납품. 킨텍스·시흥·김해공항·해운대 직영매장.', jsonld: orgLd(true), body: (rel) => `
 <section class="hero">
   <div class="wrap hero__grid">
     <div class="hero__text">
@@ -235,10 +235,10 @@ pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·�
 
 <section class="band">
   <div class="wrap">
-    ${sectionHead('Painting Ovelab', '단순 출력물이 아닌, 수차례 붓질로 완성되는 프리미엄 레플리카입니다', '원본 데이터로 출력한 캔버스 위에 6~8회 유화 리터칭을 더해 붓자국과 물감의 두께, 세월이 만든 갈라짐까지 원작처럼 되살립니다.')}
+    ${sectionHead('Painting Ovelab', '단순 출력물이 아닌, 수차례 붓질로 완성되는 프리미엄 레플리카입니다', '원본 데이터로 출력한 캔버스 위에 6~8회 리터칭을 더해 붓자국과 물감의 두께, 세월이 만든 갈라짐까지 원작처럼 되살립니다.')}
     <ol class="steps">
       <li><img src="${rel('/assets/img/process-1.jpg')}" alt="캔버스 고해상도 프린팅" loading="lazy"><h3>원본 데이터 · 캔버스 프린팅</h3><p>해외 미술관에서 정식으로 구입한 원본 데이터를 정밀하게 색보정한 뒤, 캔버스에 고해상도로 출력합니다.</p></li>
-      <li><img src="${rel('/assets/img/process-2.jpg')}" alt="유화 리터칭 작업" loading="lazy"><h3>Painting Ovelab 리터칭</h3><p>붓으로 물감을 여러 겹 올려 유화 고유의 입체감과 색의 깊이를 되살립니다.</p></li>
+      <li><img src="${rel('/assets/img/process-2.jpg')}" alt="리터칭 작업" loading="lazy"><h3>Painting Ovelab 리터칭</h3><p>붓으로 물감을 여러 겹 올려 손으로 그린 듯한 입체감과 색의 깊이를 되살립니다.</p></li>
       <li><img src="${rel('/assets/img/process-3.jpg')}" alt="원목액자 마감" loading="lazy"><h3>작품별 원목액자</h3><p>15년 경력의 액자 전문가가 작품에 가장 잘 어울리는 원목액자를 골라 마무리합니다.</p></li>
     </ol>
     <p class="more"><a href="${rel('/about/')}#replica">레플리카 명화 자세히 보기 →</a></p>
@@ -311,7 +311,7 @@ pages.push({ url: '/about/', title: '회사소개', description: '㈜네오아�
       <tr><th>본사</th><td>${esc(site.hq_address)}</td></tr>
       <tr><th>직영 매장</th><td>${stores.map((s) => `${esc(s.name)} <span class="muted">${esc(s.location)}</span>`).join('<br>')}</td></tr>
       <tr><th>사업 분야</th><td>${business.map((b) => esc(b.title)).join(' · ')}</td></tr>
-      <tr><th>핵심 기술</th><td>『Painting Ovelab』 (고해상도 캔버스 프린팅과 6~8회 유화 리터칭)</td></tr>
+      <tr><th>핵심 기술</th><td>『Painting Ovelab』 (고해상도 캔버스 프린팅과 6~8회 리터칭)</td></tr>
       <tr><th>문의</th><td>${esc(site.phone)} · ${esc(site.mobile)} · ${esc(site.email)}</td></tr>
     </table></div>
   </div>
@@ -323,7 +323,7 @@ pages.push({ url: '/about/', title: '회사소개', description: '㈜네오아�
     <div class="compare">
       <div><h3>아트포스터</h3><p>종이에 인쇄한 그림입니다. 평면적이어서 붓 터치와 물감의 질감은 느낄 수 없습니다.</p></div>
       <div><h3>모사화</h3><p>화가가 원작을 보며 손으로 따라 그린 그림입니다. 그리는 사람에 따라 원작과 색감·분위기가 크게 달라질 수 있습니다.</p></div>
-      <div class="compare__ours"><h3>네오아트 레플리카</h3><p>유화의 바탕인 캔버스에 원본 디지털 데이터를 출력하고 유화 물감으로 직접 리터칭해, 원작의 색감과 질감을 그대로 전합니다.</p></div>
+      <div class="compare__ours"><h3>네오아트 레플리카</h3><p>캔버스에 원본 디지털 데이터를 출력하고 붓으로 직접 리터칭해, 원작의 색감과 질감을 그대로 전합니다.</p></div>
     </div>
   </div>
 </section>
@@ -334,8 +334,8 @@ pages.push({ url: '/about/', title: '회사소개', description: '㈜네오아�
       <p class="eyebrow">독자 개발 기법</p>
       <h2>Painting Ovelab</h2>
       <div class="prose">
-        <p>원작의 색상과 세부 묘사는 디지털 프린팅으로 구현하고, 작품에 생명력을 불어넣는 유화 특유의 도톰한 질감과 깊이 있는 화면은 손으로 마무리합니다.</p>
-        <p>디지털 출력 후 6~8회에 걸친 유화 리터칭으로 표면을 다듬어, 물감이 손끝에 묻어날 듯한 생생한 질감을 살립니다. 오랜 세월이 남긴 표면의 크랙(갈라짐)까지 섬세하게 표현합니다.</p>
+        <p>원작의 색상과 세부 묘사는 디지털 프린팅으로 구현하고, 작품에 생명력을 불어넣는 도톰한 질감과 깊이 있는 화면은 손으로 마무리합니다.</p>
+        <p>디지털 출력 후 6~8회에 걸친 리터칭으로 표면을 다듬어, 물감이 손끝에 묻어날 듯한 생생한 질감을 살립니다. 오랜 세월이 남긴 표면의 크랙(갈라짐)까지 섬세하게 표현합니다.</p>
       </div>
     </div>
     <div class="ovelab__imgs">
@@ -432,7 +432,7 @@ ${contactBlock(rel, false)}
 ` });
 
 
-pages.push({ url: '/frames/', title: '세계명화 액자 · 모네 · 고흐 · 클림트 그림 액자', description: '모네 그림 액자, 고흐 그림 액자, 클림트·르누아르 명화 액자. 원본 데이터 캔버스 출력에 6~8회 유화 리터칭한 원작 같은 레플리카 명화를 고급 원목액자에 담았습니다. 네이버 스마트스토어 구매, 직영매장 구매, 공간 맞춤 추천·설치.', image: '/assets/img/frames-monet.jpg',
+pages.push({ url: '/frames/', title: '세계명화 액자 · 모네 · 고흐 · 클림트 그림 액자', description: '모네 그림 액자, 고흐 그림 액자, 클림트·르누아르 명화 액자. 원본 데이터 캔버스 출력에 6~8회 리터칭한 원작 같은 레플리카 명화를 고급 원목액자에 담았습니다. 네이버 스마트스토어 구매, 직영매장 구매, 공간 맞춤 추천·설치.', image: '/assets/img/frames-monet.jpg',
   jsonld: { '@context': 'https://schema.org', '@type': 'CollectionPage', name: '세계명화 액자', url: SITE_URL + '/frames/', about: (frames.items || []).map((f) => f.keyword), publisher: { '@id': SITE_URL + '/#org' } },
   body: (rel) => `
 <section class="pagehead pagehead--joined"><div class="wrap"><p class="eyebrow">레플리카 명화 액자</p><h1>${esc(frames.title)}</h1><p>${esc(frames.intro)}</p></div></section>
