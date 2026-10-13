@@ -235,7 +235,7 @@ pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·�
 
 <section class="band">
   <div class="wrap">
-    ${sectionHead('Painting Ovelab', '출력에서 그치지 않고, 붓으로 완성합니다', '원본 데이터로 출력한 캔버스 위에 6~8회 유화 리터칭을 더해 붓자국과 물감의 두께, 세월이 만든 갈라짐까지 원작처럼 되살립니다.')}
+    ${sectionHead('Painting Ovelab', '단순 출력물이 아닌, 수차례 붓질로 완성되는 프리미엄 레플리카입니다', '원본 데이터로 출력한 캔버스 위에 6~8회 유화 리터칭을 더해 붓자국과 물감의 두께, 세월이 만든 갈라짐까지 원작처럼 되살립니다.')}
     <ol class="steps">
       <li><img src="${rel('/assets/img/process-1.jpg')}" alt="캔버스 고해상도 프린팅" loading="lazy"><h3>원본 데이터 · 캔버스 프린팅</h3><p>해외 미술관에서 정식으로 구입한 원본 데이터를 정밀하게 색보정한 뒤, 캔버스에 고해상도로 출력합니다.</p></li>
       <li><img src="${rel('/assets/img/process-2.jpg')}" alt="유화 리터칭 작업" loading="lazy"><h3>Painting Ovelab 리터칭</h3><p>붓으로 물감을 여러 겹 올려 유화 고유의 입체감과 색의 깊이를 되살립니다.</p></li>
