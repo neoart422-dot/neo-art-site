@@ -170,6 +170,7 @@ content:
           - { name: link, label: 첫째 버튼 링크, type: string }
           - { name: cta2, label: 둘째 버튼 글자, type: string }
           - { name: link2, label: 둘째 버튼 링크, type: string }
+          - { name: position, label: 사진 보이는 위치 (예 '50% 50%'), type: string }
       - { name: greeting_title, label: 인사말 제목, type: string }
       - { name: greeting_en, label: 인사말 영문 문구, type: string }
       - { name: greeting, label: 인사말 본문, type: text }
