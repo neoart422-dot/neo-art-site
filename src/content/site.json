@@ -45,7 +45,7 @@
       "link": "/exhibitions/",
       "cta2": "전시 유치 문의",
       "link2": "/contact/#topic-exhibit",
-      "position": "68% 50%"
+      "position": "60% 55%"
     },
     {
       "who": "전시기획사 · 전시 운영사",
@@ -73,11 +73,12 @@
       "who": "전시장 · 카페 · 기프트샵 운영자",
       "title": "명화 액자·아트상품 납품",
       "text": "명화 액자는 물론 명화 우산·파우치·에코백 등 아트굿즈와 K굿즈를 직접 제작해 공급합니다. 아르떼뮤지엄 4개 지점과 문화예술회관 아트샵에 납품하고 있습니다.",
-      "image": "/assets/img/arte-1.jpg",
+      "image": "/assets/img/shop-aura-goods.jpg",
       "cta": "공급 사례 보기",
       "link": "/business/",
       "cta2": "납품·입점 문의",
-      "link2": "/contact/#topic-supply"
+      "link2": "/contact/#topic-supply",
+      "position": "50% 40%"
     }
   ],
   "greeting_en": "Masterpieces, closer to everyday life"

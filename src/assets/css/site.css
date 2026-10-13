@@ -276,8 +276,7 @@ p { margin: 0; }
 .audiences { padding-block-start: clamp(1rem, 3vw, 2rem); }
 .audgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 1.75rem); }
 .audgrid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.audgrid--4 .aud { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); grid-template-rows: auto; }
-.audgrid--4 .aud img { height: 100%; aspect-ratio: auto; }
+.audgrid--4 .aud img { aspect-ratio: 16 / 9; }
 .aud { display: grid; grid-template-rows: auto 1fr; background: var(--paper); border: 1px solid var(--line); }
 .aud img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .aud img.aud__img--whole { object-fit: contain; background: #fff; padding: clamp(0.6rem, 1.5vw, 1rem); box-sizing: border-box; }
