@@ -261,7 +261,7 @@ pages.push({ url: '/', title: '홈', description: '모네·고흐·클림트·�
 
 <section class="section section--tint">
   <div class="wrap">
-    ${sectionHead('전시기획', '문화예술회관과 함께 만든 세계명화 전시', ex.intro)}
+    ${sectionHead('전시기획', '세계명화 기획전시', ex.intro)}
     <div class="exgrid">
       ${(ex.packages || []).slice(0, 4).map((p) => `<article class="excard">
         <img src="${rel(p.image)}" alt="${esc(p.title)} 전시 전경" loading="lazy">
