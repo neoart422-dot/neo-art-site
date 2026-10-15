@@ -307,3 +307,12 @@ p { margin: 0; }
 
 .brand__name { white-space: nowrap; }
 @media (max-width: 1180px) { .brand__name { display: none; } }
+
+/* 자주 묻는 질문 */
+.faq { display: grid; gap: clamp(2rem, 5vw, 3rem); max-width: 52rem; }
+.faq__group h2 { font-size: clamp(1.25rem, 2.4vw, 1.5rem); padding-bottom: 0.75rem; border-bottom: 1px solid var(--line); }
+.faq__item { padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+.faq__item h3 { font-size: 1.05rem; line-height: 1.5; margin-bottom: 0.5rem; }
+.faq__item p { color: var(--muted); line-height: 1.8; }
+.faq__more { color: var(--muted); }
+.faq__more a { color: var(--ink, inherit); text-decoration: underline; text-underline-offset: 3px; }

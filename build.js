@@ -15,6 +15,7 @@ const stores = read('stores.json').items || [];
 const ex = read('exhibitions.json');
 const business = read('business.json').items || [];
 const frames = read('frames.json');
+const faq = read('faq.json');
 const SITE_URL = 'https://www.neo-art.kr';
 const news = (read('news.json').items || []).slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
 
@@ -94,6 +95,7 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script
         <a href="${esc(site.smartstore)}" target="_blank" rel="noopener">스마트스토어</a>
         <a href="${esc(site.blog)}" target="_blank" rel="noopener">블로그</a>
         <a href="${esc(site.instagram)}" target="_blank" rel="noopener">인스타그램</a>
+        <a href="${rel('/faq/')}">자주 묻는 질문</a>
       </p>
     </div>
     <dl class="footer__info">
@@ -426,6 +428,17 @@ pages.push({ url: '/news/', title: '소식', description: '네오아트플래닝
 </div></section>
 ` });
 
+const faqItems = (faq.groups || []).flatMap((g) => g.items || []);
+pages.push({ url: '/faq/', title: '자주 묻는 질문', description: '세계명화 기획전 유치, 전시용 레플리카 명화 공급, 명화 액자 구입과 공간 설치, 아트상품 납품에 관해 자주 묻는 질문과 답변.',
+  jsonld: { '@context': 'https://schema.org', '@type': 'FAQPage', url: SITE_URL + '/faq/', mainEntity: faqItems.map((x) => ({ '@type': 'Question', name: x.q, acceptedAnswer: { '@type': 'Answer', text: x.a } })) },
+  body: (rel) => `
+<section class="pagehead"><div class="wrap"><p class="eyebrow">자주 묻는 질문</p><h1>궁금하신 점을 모았습니다</h1><p>${esc(faq.intro)}</p></div></section>
+<section class="section"><div class="wrap"><div class="faq">
+  ${(faq.groups || []).map((g) => `<section class="faq__group"><h2>${esc(g.title)}</h2>${(g.items || []).map((x) => `<div class="faq__item"><h3>${esc(x.q)}</h3><p>${esc(x.a)}</p></div>`).join('')}</section>`).join('')}
+  <p class="faq__more">더 궁금하신 점은 <a href="${rel('/contact/')}">문의하기</a>로 남겨 주세요.</p>
+</div></div></section>
+` });
+
 pages.push({ url: '/contact/', title: '문의', description: '세계명화 기획전 유치, 명화 구입, 공간 맞춤 명화 설치, 아트상품 공급 문의', body: (rel) => `
 <section class="pagehead"><div class="wrap"><p class="eyebrow">문의</p><h1>편하게 문의해 주세요</h1><p>전화, 이메일, 아래 문의 양식 가운데 편하신 방법으로 연락 주세요.</p></div></section>
 ${contactBlock(rel, false)}
@@ -475,6 +488,32 @@ if (fs.existsSync(path.join(SRC, 'static'))) fs.cpSync(path.join(SRC, 'static'),
 // 검색엔진용 sitemap.xml / robots.txt
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map((p) => `  <url><loc>${SITE_URL}${p.url}</loc><lastmod>${today}</lastmod><priority>${p.url === '/' ? '1.0' : '0.8'}</priority></url>`).join('\n')}\n</urlset>\n`);
+// AI 검색용 회사 소개 (llms.txt)
+fs.writeFileSync(path.join(OUT, 'llms.txt'), [
+  `# ${site.company} (${site.company_en})`,
+  '',
+  `> 세계명화 레플리카 제작·판매, 문화재단·문화예술회관을 위한 세계명화 기획전, 전시기획사 전시용 레플리카 명화 공급, 명화 아트상품 제작·납품을 하는 세계명화 전문기업입니다. 대표 ${site.ceo}.`,
+  '',
+  '## 주요 페이지',
+  `- [세계명화 기획전](${SITE_URL}/exhibitions/): ${ex.intro}`,
+  `- [사업분야](${SITE_URL}/business/): ${business.map((b) => b.title).join(', ')}`,
+  `- [명화 액자](${SITE_URL}/frames/): ${frames.intro || ''}`,
+  `- [직영매장 안내](${SITE_URL}/stores/): ${stores.map((s) => s.name).join(', ')}`,
+  `- [자주 묻는 질문](${SITE_URL}/faq/): 전시 유치, 작품 공급, 액자 구입·설치, 아트상품 납품 문답`,
+  `- [회사소개](${SITE_URL}/about/)`,
+  `- [문의](${SITE_URL}/contact/)`,
+  '',
+  '## 전시 진행 이력',
+  ...(ex.history || []).map((h) => `- ${h.year} ${h.title} (${h.venue})`),
+  '',
+  '## 자주 묻는 질문',
+  ...faqItems.flatMap((x) => [`### ${x.q}`, x.a, '']),
+  '## 연락처',
+  `- 대표전화 ${site.phone || '1588-8540'}`,
+  `- 이메일 ${site.email || '2mickey@naver.com'}`,
+  `- 온라인 아트샵 ${site.smartstore}`,
+  '',
+].join('\n'));
 fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
 // 예전 아임웹 주소 → 새 주소로 자동 이동 (검색에 남아 있는 옛 링크 보호)
 const OLD = { 'index-real': '/', portfolio: '/exhibitions/', 'GalleryAura-real': '/stores/', frameshop: '/frames/', mediaart: '/business/' };
