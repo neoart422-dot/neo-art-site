@@ -59,6 +59,7 @@ function layout({ url, title, description, body, depth, image, jsonld }) {
   const head = `<title>${esc(fullTitle)}</title>
 <meta name="description" content="${esc(description || site.lead)}">
 <meta name="naver-site-verification" content="abe42e767feab6687d1461666da594cc9c7a04ee">
+<meta name="google-site-verification" content="ZS1GhV__BB5UeOcxYguM43L-nrqh3kaWzt0FJjzODnI">
 <meta property="og:title" content="${esc(fullTitle)}">
 <meta property="og:description" content="${esc(description || site.lead)}">
 <meta property="og:type" content="website">
