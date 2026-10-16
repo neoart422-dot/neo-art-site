@@ -16,6 +16,7 @@ const ex = read('exhibitions.json');
 const business = read('business.json').items || [];
 const frames = read('frames.json');
 const faq = read('faq.json');
+const guides = read('guides.json').items || [];
 const SITE_URL = 'https://www.neo-art.kr';
 const news = (read('news.json').items || []).slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
 
@@ -98,6 +99,7 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script
         <a href="${esc(site.blog)}" target="_blank" rel="noopener">블로그</a>
         <a href="${esc(site.instagram)}" target="_blank" rel="noopener">인스타그램</a>
         <a href="${rel('/faq/')}">자주 묻는 질문</a>
+        ${guides.map((g) => `<a href="${rel(`/guide/${g.slug}/`)}">${esc(g.eyebrow)}</a>`).join('\n        ')}
       </p>
     </div>
     <dl class="footer__info">
@@ -313,6 +315,7 @@ pages.push({ url: '/about/', title: '회사소개', description: '㈜네오아�
       <tr><th>회사명</th><td>${esc(site.company)} (${esc(site.company_en)})</td></tr>
       <tr><th>대표자</th><td>${esc(site.ceo)}</td></tr>
       <tr><th>본사</th><td>${esc(site.hq_address)}</td></tr>
+      <tr><th>운영 브랜드</th><td>갤러리네오 · 카페네오 · 갤러리오라 · 아트샵 오라</td></tr>
       <tr><th>직영 매장</th><td>${stores.map((s) => `${esc(s.name)} <span class="muted">${esc(s.location)}</span>`).join('<br>')}</td></tr>
       <tr><th>사업 분야</th><td>${business.map((b) => esc(b.title)).join(' · ')}</td></tr>
       <tr><th>핵심 기술</th><td>『Painting Ovelab』 (고해상도 캔버스 프린팅과 6~8회 리터칭)</td></tr>
@@ -402,7 +405,7 @@ ${contactBlock(rel, true)}
 ` });
 
 pages.push({ url: '/stores/', title: '직영매장 안내', description: '세계명화 액자와 아트상품을 직접 보고 살 수 있는 직영매장. 갤러리네오·카페네오(킨텍스 제2전시장), 갤러리오라(시흥하늘휴게소), 아트샵 오라 킨텍스·김해공항·해운대 엑스더스카이점 위치 안내.', jsonld: orgLd(true), body: (rel) => `
-<section class="pagehead"><div class="wrap"><p class="eyebrow">직영매장 안내</p><h1>직영 매장 ${stores.length}곳</h1><p>명화 레플리카와 아트굿즈를 가까이에서 보고 고르실 수 있습니다.</p></div></section>
+<section class="pagehead"><div class="wrap"><p class="eyebrow">직영매장 안내</p><h1>직영 매장 ${stores.length}곳</h1><p>갤러리네오·카페네오, 갤러리오라, 아트샵 오라는 모두 ㈜네오아트플래닝이 직접 운영하는 매장입니다. 명화 레플리카와 아트굿즈를 가까이에서 보고 고르실 수 있습니다.</p></div></section>
 <section class="section"><div class="wrap storelist">
   ${stores.map((s, i) => `<article class="store" id="store-${i + 1}">
     <div class="store__imgs">${(s.images || []).filter(Boolean).map((src, j) => `<img src="${rel(src)}" alt="${esc(s.name)} 매장 사진 ${j + 1}" loading="lazy">`).join('')}</div>
@@ -429,6 +432,16 @@ pages.push({ url: '/news/', title: '소식', description: '네오아트플래닝
   </article>`).join('') : '<p>아직 등록된 소식이 없습니다.</p>'}
 </div></section>
 ` });
+
+guides.forEach((g) => pages.push({ url: `/guide/${g.slug}/`, title: g.title, description: g.description,
+  jsonld: { '@context': 'https://schema.org', '@type': 'Service', name: g.eyebrow, description: g.description, url: `${SITE_URL}/guide/${g.slug}/`, provider: { '@id': SITE_URL + '/#org' }, areaServed: 'KR' },
+  body: (rel) => `
+<section class="pagehead"><div class="wrap"><p class="eyebrow">${esc(g.eyebrow)}</p><h1>${esc(g.title)}</h1><p>${esc(g.intro)}</p></div></section>
+<section class="section"><div class="wrap"><div class="faq">
+  ${(g.sections || []).map((s) => `<section class="faq__group"><h2>${esc(s.h)}</h2><p class="guide__p">${esc(s.p)}</p></section>`).join('')}
+  <p class="guide__links">${(g.links || []).map((l, i) => `<a class="btn${i ? '' : ' btn--solid'}" href="${rel(l.href)}">${esc(l.label)}</a>`).join(' ')}</p>
+</div></div></section>
+` }));
 
 const faqItems = (faq.groups || []).flatMap((g) => g.items || []);
 pages.push({ url: '/faq/', title: '자주 묻는 질문', description: '세계명화 기획전 유치, 전시용 레플리카 명화 공급, 명화 액자 구입과 공간 설치, 아트상품 납품에 관해 자주 묻는 질문과 답변.',
@@ -494,13 +507,14 @@ fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="U
 fs.writeFileSync(path.join(OUT, 'llms.txt'), [
   `# ${site.company} (${site.company_en})`,
   '',
-  `> 세계명화 레플리카 제작·판매, 문화재단·문화예술회관을 위한 세계명화 기획전, 전시기획사 전시용 레플리카 명화 공급, 명화 아트상품 제작·납품을 하는 세계명화 전문기업입니다. 대표 ${site.ceo}.`,
+  `> 갤러리네오·카페네오, 갤러리오라, 아트샵 오라를 운영하는 ㈜네오아트플래닝은 세계명화 레플리카 제작·판매, 문화재단·문화예술회관을 위한 세계명화 기획전, 전시기획사 전시용 레플리카 명화 공급, 명화 아트상품 제작·납품을 하는 세계명화 전문기업입니다. 대표 ${site.ceo}.`,
   '',
   '## 주요 페이지',
   `- [세계명화 기획전](${SITE_URL}/exhibitions/): ${ex.intro}`,
   `- [사업분야](${SITE_URL}/business/): ${business.map((b) => b.title).join(', ')}`,
   `- [명화 액자](${SITE_URL}/frames/): ${frames.intro || ''}`,
   `- [직영매장 안내](${SITE_URL}/stores/): ${stores.map((s) => s.name).join(', ')}`,
+  ...guides.map((g) => `- [${g.eyebrow}](${SITE_URL}/guide/${g.slug}/): ${g.description}`),
   `- [자주 묻는 질문](${SITE_URL}/faq/): 전시 유치, 작품 공급, 액자 구입·설치, 아트상품 납품 문답`,
   `- [회사소개](${SITE_URL}/about/)`,
   `- [문의](${SITE_URL}/contact/)`,

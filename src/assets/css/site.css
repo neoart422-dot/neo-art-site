@@ -316,3 +316,5 @@ p { margin: 0; }
 .faq__item p { color: var(--muted); line-height: 1.8; }
 .faq__more { color: var(--muted); }
 .faq__more a { color: var(--ink, inherit); text-decoration: underline; text-underline-offset: 3px; }
+.guide__p { color: var(--muted); line-height: 1.85; margin-top: 1rem; }
+.guide__links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
