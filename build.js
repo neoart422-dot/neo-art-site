@@ -182,6 +182,7 @@ function orgLd(withStores) {
     url: SITE_URL + '/', telephone: site.phone, email: site.email, logo: SITE_URL + site.hero_image,
     address: { '@type': 'PostalAddress', streetAddress: site.hq_address, addressCountry: 'KR' },
     sameAs: [site.smartstore, site.blog, site.instagram].filter(Boolean),
+    subjectOf: (site.press || []).map((a) => ({ '@type': 'NewsArticle', headline: a.title, url: a.url, datePublished: a.date, publisher: { '@type': 'Organization', name: a.outlet } })),
   };
   const graph = [org, { '@type': 'WebSite', '@id': SITE_URL + '/#site', url: SITE_URL + '/', name: site.company, inLanguage: 'ko-KR', publisher: { '@id': SITE_URL + '/#org' } }];
   if (withStores) stores.forEach((s) => graph.push({
@@ -324,7 +325,14 @@ pages.push({ url: '/about/', title: '회사소개', description: '㈜네오아�
   </div>
 </section>
 
-<section class="section" id="replica">
+${(site.press || []).length ? `<section class="section" id="press">
+  <div class="wrap">
+    ${sectionHead('언론 보도', '언론에 소개된 네오아트플래닝', '')}
+    <ul class="press">${site.press.map((a) => `<li><a href="${esc(a.url)}" target="_blank" rel="noopener"><span class="press__meta">${esc(a.outlet)} · ${esc(a.date.replace(/-/g, '.'))}</span><span class="press__title">${esc(a.title)}</span></a></li>`).join('')}</ul>
+  </div>
+</section>
+
+` : ''}<section class="section" id="replica">
   <div class="wrap">
     ${sectionHead('레플리카 명화란?', '명화를 재현하는 방법은 여러 가지입니다', '')}
     <div class="compare">
@@ -522,6 +530,7 @@ fs.writeFileSync(path.join(OUT, 'llms.txt'), [
   '## 전시 진행 이력',
   ...(ex.history || []).map((h) => `- ${h.year} ${h.title} (${h.venue})`),
   '',
+  ...((site.press || []).length ? ['## 언론 보도', ...site.press.map((x) => `- ${x.date} ${x.outlet}: [${x.title}](${x.url})`), ''] : []),
   '## 자주 묻는 질문',
   ...faqItems.flatMap((x) => [`### ${x.q}`, x.a, '']),
   '## 연락처',

@@ -318,3 +318,10 @@ p { margin: 0; }
 .faq__more a { color: var(--ink, inherit); text-decoration: underline; text-underline-offset: 3px; }
 .guide__p { color: var(--muted); line-height: 1.85; margin-top: 1rem; }
 .guide__links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* 언론 보도 */
+.press { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; max-width: 52rem; }
+.press a { display: grid; gap: .25rem; padding: 1rem 1.25rem; border: 1px solid var(--line, #ddd); text-decoration: none; color: inherit; }
+.press a:hover { border-color: currentColor; }
+.press__meta { font-size: .85rem; opacity: .7; }
+.press__title { font-weight: 600; }

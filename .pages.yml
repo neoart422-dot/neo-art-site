@@ -238,3 +238,12 @@ content:
       - { name: instagram, label: 인스타그램 주소, type: string }
       - { name: vr_tour, label: VR 전시 주소, type: string }
       - { name: form_email, label: 문의 받을 이메일, type: string }
+      - name: press
+        label: 언론 보도
+        type: object
+        list: true
+        fields:
+          - { name: outlet, label: 매체, type: string }
+          - { name: date, label: 날짜(예 2025-11-19), type: string }
+          - { name: title, label: 기사 제목, type: string }
+          - { name: url, label: 기사 주소, type: string }

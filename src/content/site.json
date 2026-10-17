@@ -81,5 +81,25 @@
       "position": "50% 40%"
     }
   ],
-  "greeting_en": "Masterpieces, closer to everyday life"
+  "greeting_en": "Masterpieces, closer to everyday life",
+  "press": [
+    {
+      "outlet": "서울경제",
+      "date": "2025-11-19",
+      "title": "전시장 넘어 복합문화공간으로…킨텍스, 갤러리네오 개관",
+      "url": "https://www.sedaily.com/article/14145441"
+    },
+    {
+      "outlet": "프레시안",
+      "date": "2025-11-19",
+      "title": "킨텍스, 대형 전문화랑 '갤러리네오' 개관",
+      "url": "https://www.pressian.com/pages/articles/2025111915264529344"
+    },
+    {
+      "outlet": "고양신문",
+      "date": "2025-11-21",
+      "title": "킨텍스에 100평 규모 대형 전문화랑 '갤러리네오' 개관",
+      "url": "https://www.mygoyang.com/news/articleView.html?idxno=86639"
+    }
+  ]
 }
