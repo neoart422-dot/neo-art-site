@@ -63,31 +63,31 @@
       "year": "2024",
       "title": "구스타프 클림트展",
       "venue": "부산시민회관",
-      "image": ""
+      "image": "/assets/img/exh-busan-klimt.jpg"
     },
     {
       "year": "2024",
       "title": "모네 & 르누아르展",
       "venue": "평택 북부문예회관",
-      "image": ""
+      "image": "/assets/img/exh-pyeongtaek-north-monet-renoir.jpg"
     },
     {
       "year": "2024",
       "title": "모네 & 르누아르展",
       "venue": "인천서구문화재단 청라블루노바홀",
-      "image": ""
+      "image": "/assets/img/exh-cheongna-monet-renoir.jpg"
     },
     {
       "year": "2024",
       "title": "모네 & 클림트展",
       "venue": "성동문화재단",
-      "image": ""
+      "image": "/assets/img/exh-seongdong-monet-klimt.jpg"
     },
     {
       "year": "2024",
       "title": "세계명화와 함께하는 색깔여행展",
       "venue": "속초문화예술회관",
-      "image": ""
+      "image": "/assets/img/exh-sokcho-color.jpg"
     },
     {
       "year": "2023",
@@ -108,16 +108,28 @@
       "image": "/assets/img/exh-nonsan-color.jpg"
     },
     {
+      "year": "2023",
+      "title": "명화, 풍경을 보다 - 세계명화 풍경전",
+      "venue": "경북도립대학교",
+      "image": "/assets/img/exh-gyeongbuk-univ-landscape.jpg"
+    },
+    {
+      "year": "2023",
+      "title": "세계명화 풍경전",
+      "venue": "고양 장성중학교",
+      "image": "/assets/img/exh-jangseong-landscape.jpg"
+    },
+    {
       "year": "2021",
       "title": "구스타프 클림트展",
       "venue": "울산도서관 · 함안문화예술회관 · 경북도서관",
-      "image": ""
+      "image": "/assets/img/exh-ulsan-klimt.jpg"
     },
     {
       "year": "2021",
       "title": "세계명화와 함께하는 색깔여행展",
       "venue": "충주문화회관 · 충북교육문화원",
-      "image": ""
+      "image": "/assets/img/exh-chungju-color.jpg"
     },
     {
       "year": "2020",
@@ -141,19 +153,25 @@
       "year": "2020",
       "title": "모네 & 르누아르展",
       "venue": "고령 대가야문화누리",
-      "image": ""
+      "image": "/assets/img/exh-goryeong-monet-renoir.jpg"
     },
     {
       "year": "2020",
       "title": "클림트展 · 모네 & 르누아르展",
       "venue": "철원 화강문화관",
-      "image": ""
+      "image": "/assets/img/exh-cheorwon-klimt.jpg"
     },
     {
       "year": "2020",
       "title": "모네展 / 이중섭 특별기획전",
       "venue": "현대백화점 킨텍스점 · 충청점",
       "image": "/assets/img/exh-hyundai-kintex-monet.jpg"
+    },
+    {
+      "year": "2020",
+      "title": "세계명화로 만나는 유럽여행展",
+      "venue": "현대백화점 킨텍스점 Gallery H",
+      "image": "/assets/img/exh-hyundai-europe.jpg"
     }
   ],
   "supply_title": "전시를 위한 레플리카 명화 공급",
