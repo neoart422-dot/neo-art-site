@@ -325,3 +325,4 @@ p { margin: 0; }
 .press a:hover { border-color: currentColor; }
 .press__meta { font-size: .85rem; opacity: .7; }
 .press__title { font-weight: 600; }
+.faq__updated { font-size: .85rem; color: var(--muted); margin-top: .5rem; }

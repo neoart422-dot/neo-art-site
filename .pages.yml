@@ -29,6 +29,7 @@ content:
     format: json
     fields:
       - { name: title, label: 페이지 제목, type: string }
+      - { name: updated, label: 최종 업데이트(예 2026-11), type: string }
       - { name: intro, label: 소개 글, type: text }
       - name: items
         label: 작가별 액자

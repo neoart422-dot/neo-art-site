@@ -453,9 +453,9 @@ guides.forEach((g) => pages.push({ url: `/guide/${g.slug}/`, title: g.title, des
 
 const faqItems = (faq.groups || []).flatMap((g) => g.items || []);
 pages.push({ url: '/faq/', title: '자주 묻는 질문', description: '세계명화 기획전 유치, 전시용 레플리카 명화 공급, 명화 액자 구입과 공간 설치, 아트상품 납품에 관해 자주 묻는 질문과 답변.',
-  jsonld: { '@context': 'https://schema.org', '@type': 'FAQPage', url: SITE_URL + '/faq/', mainEntity: faqItems.map((x) => ({ '@type': 'Question', name: x.q, acceptedAnswer: { '@type': 'Answer', text: x.a } })) },
+  jsonld: { '@context': 'https://schema.org', '@type': 'FAQPage', url: SITE_URL + '/faq/', ...(faq.updated ? { dateModified: faq.updated } : {}), mainEntity: faqItems.map((x) => ({ '@type': 'Question', name: x.q, acceptedAnswer: { '@type': 'Answer', text: x.a } })) },
   body: (rel) => `
-<section class="pagehead"><div class="wrap"><p class="eyebrow">자주 묻는 질문</p><h1>궁금하신 점을 모았습니다</h1><p>${esc(faq.intro)}</p></div></section>
+<section class="pagehead"><div class="wrap"><p class="eyebrow">자주 묻는 질문</p><h1>궁금하신 점을 모았습니다</h1><p>${esc(faq.intro)}</p>${faq.updated ? `<p class="faq__updated">최종 업데이트: ${esc(faq.updated.replace(/^(\d{4})-0?(\d{1,2}).*$/, '$1년 $2월'))}</p>` : ''}</div></section>
 <section class="section"><div class="wrap"><div class="faq">
   ${(faq.groups || []).map((g) => `<section class="faq__group"><h2>${esc(g.title)}</h2>${(g.items || []).map((x) => `<div class="faq__item"><h3>${esc(x.q)}</h3><p>${esc(x.a)}</p></div>`).join('')}</section>`).join('')}
   <p class="faq__more">더 궁금하신 점은 <a href="${rel('/contact/')}">문의하기</a>로 남겨 주세요.</p>
