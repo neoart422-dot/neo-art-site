@@ -48,6 +48,7 @@ const NAV = [
   ['/business/', '사업분야'],
   ['/exhibitions/', '전시기획'],
   ['/news/', '소식'],
+  ['/faq/', '자주 묻는 질문'],
   ['/contact/', '문의'],
 ];
 
