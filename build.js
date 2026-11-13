@@ -382,7 +382,7 @@ pages.push({ url: '/business/', title: '사업분야', description: '세계명�
 </div></section>
 ` });
 
-pages.push({ url: '/exhibitions/', title: '세계명화 기획전', description: '문화재단·문화예술회관을 위한 세계명화 기획전. 클림트전, 모네 & 르누아르전, 모네전, 색깔여행전, 이중섭전 패키지와 2020년부터의 전시 진행 이력. 작품 대여·운송·설치·도슨트·체험까지.', body: (rel) => `
+pages.push({ url: '/exhibitions/', title: '세계명화 기획전', description: '문화재단·문화예술회관을 위한 세계명화 기획전·레플리카전. 고흐전, 모네전, 클림트전, 모네 & 르누아르전, 색깔여행전, 이중섭전 패키지와 2020년부터의 전시 진행 이력. 어린이·가족 명화 체험전, 방학 특별전시까지 작품 대여·운송·설치·도슨트·체험을 한 번에.', body: (rel) => `
 <section class="pagehead pagehead--joined"><div class="wrap"><p class="eyebrow">전시기획</p><h1>세계명화 기획전</h1><p>${esc(ex.intro)}</p></div></section>
 
 <section class="section section--flush"><div class="wrap">
